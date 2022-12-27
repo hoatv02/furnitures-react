@@ -1,0 +1,8 @@
+.container_navbar{
+    position: relative;
+}
+.navbar{
+    position:sticky;
+    position: -webkit-sticky;
+    top:10px;
+}

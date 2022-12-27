@@ -1,0 +1,7 @@
+.container_product{
+    padding:0 20px;
+}
+.pagination{
+    float:right;
+    justify-content: center;
+}
