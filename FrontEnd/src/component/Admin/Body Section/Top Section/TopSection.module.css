@@ -1,0 +1,17 @@
+.topSection{
+    padding: 10px 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.topForm input{
+    width: 300px;  
+    padding: 16px !important;  
+}
+.Search{
+    margin-left:-15px;
+}
+.box{
+    background:  #212529;
+    color: rgb(255, 255, 255);
+}

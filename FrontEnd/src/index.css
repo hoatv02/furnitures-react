@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pattaya&display=swap');
+.dark{
+    background: #212529;
+    color: #fff;
+    transition: 2s ease;
+}
+.light{
+    background: #fff;
+    color: #212529;
+    transition: 2s ease;
+}
+.sidebar li{
+    color: rgb(255, 255, 255);
+}
+.sidebar {
+    box-shadow: 1px 3px 5px #333;
+    width: 80px;
+    transition: .5 ease;
+}
+.sidebar:hover{
+    width: 250px;
+    transition: .5s ease-in;
+}
+.sidebar ul li a .title{
+    margin-left: 30px !important;
+}

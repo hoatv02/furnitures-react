@@ -1,0 +1,36 @@
+.container {
+    background: #212529;
+    color: rgb(255, 255, 255) !important;
+    box-shadow: 1px 1px 2px 1px;
+    height: 100vh !important;
+}
+
+.container:hover {
+    transition: .2s;
+    transition-delay: 4s;
+}
+
+.list li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.list li a:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(251, 251, 251);
+    border-radius: 10px;
+    transition: .5s ease;
+}
+.sideBarImg{
+    margin-left: 15px;
+    width: 10%;
+}
+.titleSettings{
+    margin-left: 30px !important;
+}
+/* .dark{
+    background: #000 !important;
+}
+.light{
+    background: #fff !important;
+} */

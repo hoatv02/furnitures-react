@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import NavbarLeft from "../../component/Admin/NavbarLeft/NavbarLeft";
+import styles from "./Admin.module.css";
+import SideBar from "../../component/Admin/SideBar Section/SideBar";
+import TopSection from "../../component/Admin/Body Section/Top Section/TopSection";
+import FooterSection from "../../component/Admin/Body Section/Footer Section/FooterSection";
 
 const Admin = () => {
+  
   return (
-    <div className="sb-nav-fixed">
-      <div id="layoutSidenav">
-        <NavbarLeft />
-        <div id="layoutSidenav_content">
+    <div className={styles.container}>
+      <div className={styles.sidebar}>
+        {" "}
+        <SideBar />
+      </div>
+      <div className={`${styles.body} `}>
+        <TopSection />
+
+        <div className={styles.oulet}>
           <Outlet />
         </div>
+        <FooterSection />
       </div>
     </div>
   );
