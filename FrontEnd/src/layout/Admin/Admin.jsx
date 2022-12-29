@@ -16,7 +16,7 @@ const Admin = () => {
       <div className={`${styles.body} `}>
         <TopSection />
 
-        <div className={styles.oulet}>
+        <div className={`${styles.oulet}`}>
           <Outlet />
         </div>
         <FooterSection />

@@ -3,13 +3,13 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pattaya&display=swap');
 .dark{
-    background: #212529;
-    color: #fff;
+    background: #212529 !important;
+    color: #fff !important;
     transition: 2s ease;
 }
 .light{
-    background: #fff;
-    color: #212529;
+    background: #fff !important;
+    color: #212529 !important;
     transition: 2s ease;
 }
 .sidebar li{
@@ -21,7 +21,7 @@
     transition: .5 ease;
 }
 .sidebar:hover{
-    width: 250px;
+    width: 230px;
     transition: .5s ease-in;
 }
 .sidebar ul li a .title{

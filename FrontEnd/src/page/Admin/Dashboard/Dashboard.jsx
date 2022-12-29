@@ -5,7 +5,7 @@ const Dashboard = () => {
     <section class="text-gray-600 body-font  h-screen">
       <div class="flex flex-wrap  text-center">
         <div class="p-4 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">
-          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white shadow-indigo-50 shadow-md">
+          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white  shadow-md">
             <div>
               <h2 class="text-gray-900 text-lg font-bold">Total Ballance</h2>
               <h3 class="mt-2 text-xl font-bold text-green-500 text-left">
@@ -26,7 +26,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div class="p-4 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">
-          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white shadow-indigo-50 shadow-md">
+          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white  shadow-md">
             <div>
               <h2 class="text-gray-900 text-lg font-bold">Total Ballance</h2>
               <h3 class="mt-2 text-xl font-bold text-green-500 text-left">
@@ -47,7 +47,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div class="p-4 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">
-          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white shadow-indigo-50 shadow-md">
+          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white  shadow-md">
             <div>
               <h2 class="text-gray-900 text-lg font-bold">Total Ballance</h2>
               <h3 class="mt-2 text-xl font-bold text-green-500 text-left">
@@ -68,7 +68,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div class="p-4 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">
-          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white shadow-indigo-50 shadow-md">
+          <div class=" flex items-center  justify-between p-4  rounded-lg bg-white  shadow-md">
             <div>
               <h2 class="text-gray-900 text-lg font-bold">Total Ballance</h2>
               <h3 class="mt-2 text-xl font-bold text-green-500 text-left">

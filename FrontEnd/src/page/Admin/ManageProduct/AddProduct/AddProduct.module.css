@@ -1,0 +1,15 @@
+.addProduct input{
+    border-radius:2px;
+}
+.addProduct select{
+    height: 38px;
+}
+.addProduct textarea{
+    border-radius: 2px;
+}
+.addProduct{
+    margin-left: 20px;
+}
+.addProduct button{
+    /* background-color: primary; */
+}

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'
 import styles from "./Sidebar.module.css";
 import WindowIcon from "@mui/icons-material/Window";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
 import CategoryIcon from "@mui/icons-material/Category";
 import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import { createContext } from "react";
 import DarkMode from "../DarkMode/DarkMode";
 
 
-export const ThemeContext = createContext(null);
 
 const SideBar = () => {
  
@@ -31,59 +30,59 @@ const SideBar = () => {
             </div>
             <ul className={`${styles.list} mt-6 space-y-2 tracking-wide`}>
               <li class="min-w-max">
-                <a
-                  href="#"
+                <Link
+                  to='/admin/'
                   aria-label="dashboard"
                   class="relative flex items-center space-x-4 rounded-md bg-gradient-to-r from-white-600 to-white-400 px-4 py-3 "
                 >
                   <WindowIcon />
                   <span class="title">Dashboard</span>
-                </a>
+                </Link>
               </li>
               <li class="min-w-max">
-                <a
-                  href="#"
+                <Link
+                  to='/admin/manageProduct'
                   class="bg group flex items-center space-x-4 rounded-md px-4 py-3 bg-gradient-to-r  "
                 >
                   <ProductionQuantityLimitsIcon />
                   <span class="title">Product</span>
-                </a>
+                </Link>
               </li>
               <li class="min-w-max">
-                <a
-                  href="#"
+                <Link
+                  to=''
                   class="group flex items-center space-x-4 rounded-md px-4 py-3 bg-gradient-to-r "
                 >
                   <CategoryIcon />
                   <span class="title">Category</span>
-                </a>
+                </Link>
 
               </li>
               <li class="min-w-max">
-                <a
-                  href="#"
+                <Link
+                  to=''
                   class="group flex items-center space-x-4 rounded-md px-4 py-3"
                 >
                   <DriveFolderUploadIcon />
                   <span class="title">Data user</span>
-                </a>
+                </Link>
               </li>
               <li class="min-w-max">
-                <a
-                  href="#"
+                <Link
+                  to=''
                   class="group flex items-center space-x-4 rounded-md px-4 py-3"
                 >
                   <TrendingUpIcon />
                   <span class="title">Statistics</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           
           <div class="w-max -mb-3 ">
             <DarkMode/>
-            <a
-              href="#"
+            <Link
+              to=''
               class="group flex items-center space-x-4 rounded-md px-4 py-3"
             >
               <svg
@@ -99,7 +98,7 @@ const SideBar = () => {
                 />
               </svg>
               <span class="titleSettings ml-5"> Settings</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
