@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./AddProduct.module.css";
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
@@ -18,9 +18,9 @@ const AddProduct = () => {
       console.log('data',data)
       navigate('/admin/manageProduct')
     } catch (error) {
-      
     }
   }
+ 
   return (
     <div className={styles.addProduct}>
       <h1 class='text-3xl py-3 font-bold text-uppercase'>Thêm mới sản phẩm</h1>

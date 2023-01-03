@@ -1,26 +1,47 @@
-import React from "react";
-import styles from "./AddProduct.module.css";
+import React, { useEffect } from "react";
+import styles from "./EditProduct.module.css";
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
-import { useNavigate, useNavigation } from "react-router-dom";
-const AddProduct = () => {
+import { useNavigate, useNavigation, useParams } from "react-router-dom";
+import { useEditProductStore, useProductStore } from "../../../../Store/Product";
+const EditProduct = () => {
+  const setProducts = useEditProductStore((state) => state.setProducts);
+  const products = useEditProductStore((state) => state.products);
   const navigate = useNavigate()
+  const {id} = useParams();
   const {
     register,
     handleSubmit,
+    reset,
     formState:{
       errors
     }
   }= useForm()
+  useEffect(() => {
+    console.log(setProducts())
+  }, []);
+  // useEffect(()=>{
+  //   (
+  //     async()=>{
+  //       try {
+  //         const {data} = await axios.get(`http://localhost:3000/product/${id}`)
+  //         reset(data.data)
+  //         console.log("data",data.data)
+  //       } catch (error) {
+          
+  //       }
+  //     }
+  //   )()
+  // },[])
   const onSubmit = async (product) => {
     try {
-      const {data} = await axios.post(`http://localhost:3000/product`,product)
+      const {data} = await axios.put(`http://localhost:3000/product/${id}`,product)
       console.log('data',data)
       navigate('/admin/manageProduct')
     } catch (error) {
-      
     }
   }
+ 
   return (
     <div className={styles.addProduct}>
       <h1 class='text-3xl py-3 font-bold text-uppercase'>Thêm mới sản phẩm</h1>
@@ -81,4 +102,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

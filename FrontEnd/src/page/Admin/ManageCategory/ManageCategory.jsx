@@ -2,17 +2,18 @@ import { IconButton, Pagination } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useProductStore } from "../../../Store/Product";
-import styles from "./ManageProduct.module.css";
+import styles from "./ManageCategory.module.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
 import { Link } from "react-router-dom";
-const ManageProduct = () => {
+import { useCategoryStore } from "../../../Store/Category";
+const ManageCategory = () => {
   const [show, setShow] = useState(false);
-  const setProducts = useProductStore((state) => state.setProducts);
-  const products = useProductStore((state) => state.products);
+  const setCategorys = useCategoryStore((state)=>state.setCategorys)
+  const categorys = useCategoryStore((state) => state.categorys);
   useEffect(() => {
-    setProducts();
+    setCategorys();
   }, []);
 
   return (
@@ -25,18 +26,13 @@ const ManageProduct = () => {
             <table class="min-w-max w-full table-auto">
               <thead>
                 <tr class="  opacity-100  uppercase text-sm leading-normal">
-                  <th class="py-3 px-6 text-left">STT</th>
-                  <th class="py-3 px-6 text-left">Product Name</th>
-
-                  <th class="py-3 px-6 text-left">Price</th>
-                  <th class="py-3 px-6 text-left">Quantity</th>
-                  <th class="py-3 px-6 text-center">Image</th>
-                  <th class="py-3 px-6 text-left">Category</th>
-                  <th class="py-3 px-6 text-center">Actions</th>
+                  <th class="py-3 px-3 text-left">STT</th>
+                  <th class="py-3 px-3 text-left">Category Name</th>
+                  <th class="py-3 px-3 text-center">Actions</th>
                 </tr>
               </thead>
               <tbody class=" text-sm font-light">
-                {products.map((item, index) => {
+                {categorys.map((item, index) => {
                   return (
                     <tr class="border-b  " key={index}>
                       <td class=" px-3 text-left whitespace-nowrap">
@@ -46,41 +42,11 @@ const ManageProduct = () => {
                       </td>
                       <td class=" px-3 text-left whitespace-nowrap">
                         <div class="flex items-center">
-                          <span class="font-medium">{item.productName}</span>
+                          <span class="font-medium">{item.categoryName}</span>
                         </div>
                       </td>
 
-                      <td class="font-bold  text-left">
-                        <span class=" text-red-500 py-1 px-3 rounded-full text-xs">
-                          {item.price}
-                        </span>
-                      </td>
-                      <td className={`${styles.quantity} px-3 text-left `}>
-                        <span class=" py-1 rounded-full text-xs">
-                          {item.quantity > 0 ? (
-                            <span class="bg-green-500 px-1 py-1 text-xs rounded-full">
-                              Còn hàng
-                            </span>
-                          ) : (
-                            <span class="bg-red-500 py-1 px-1 rounded-full">
-                              Hết hàng
-                            </span>
-                          )}
-                        </span>
-                      </td>
-                      <td class=" text-left">
-                        <div class="flex items-center justify-center">
-                          <img
-                            class="w-10 h-10 rounded-full border-gray-200 border transform hover:scale-125"
-                            src="https://randomuser.me/api/portraits/men/1.jpg"
-                          />
-                        </div>
-                      </td>
-                      <td class=" px-3 text-left">
-                        <span class=" py-1  rounded-full text-xs">
-                          {item.category}
-                        </span>
-                      </td>
+                     
                       <td class=" px-3 text-left">
                         <div class="flex item-center justify-center">
                           <IconButton
@@ -126,4 +92,4 @@ const ManageProduct = () => {
   );
 };
 
-export default ManageProduct;
+export default ManageCategory;
