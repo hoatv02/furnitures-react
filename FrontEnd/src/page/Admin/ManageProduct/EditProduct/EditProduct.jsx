@@ -6,7 +6,7 @@ import { useNavigate, useNavigation, useParams } from "react-router-dom";
 import { useEditProductStore, useProductStore } from "../../../../Store/Product";
 const EditProduct = () => {
   const setProducts = useEditProductStore((state) => state.setProducts);
-  const products = useEditProductStore((state) => state.products);
+  const products = useEditProductStore((state) => state.id);
   const navigate = useNavigate()
   const {id} = useParams();
   const {
