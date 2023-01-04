@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 const navigation = {
   categories: [],
   pages: [
-    { name: "Home", to: "/" },
-    { name: "Product", to: "/product" },
-    { name: "About", to: "/about" },
-    { name: "Contact", to: "/contact" },
+    { name: "Trang chủ", to: "/" },
+    { name: "Sản phẩm", to: "/product" },
+    { name: "Giới thiệu", to: "/about" },
+    { name: "Liên hệ", to: "/contact" },
   ],
 };
 
@@ -82,7 +82,7 @@ export default function HeaderPage() {
                       to='/signin'
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Sign in
+                      Đăng nhập
                     </Link>
                   </div>
                   <div className="flow-root">
@@ -90,7 +90,7 @@ export default function HeaderPage() {
                       to="/register"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Create account
+                      Đăng kí
                     </Link>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function HeaderPage() {
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="https://ht21992.pythonanywhere.com/static/pages/images/logo.png"
                     alt=""
                   />
                 </Link>
@@ -159,14 +159,14 @@ export default function HeaderPage() {
                     to="/signin"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                    Sign in
+                    Đăng nhập
                   </Link>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <Link
                     to="/register"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                    Create account
+                    Đăng kí
                   </Link>
                 </div>
 
@@ -191,11 +191,11 @@ export default function HeaderPage() {
                     to="#"
                     className="p-2 text-gray-400 hover:text-gray-500"
                   >
-                    <span className="sr-only">Search</span>
+                    {/* <span className="sr-only">Search</span> */}
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
                       aria-hidden="true"
-                    />
+                   />
                   </Link>
                 </div>
 

@@ -6,6 +6,6 @@ export const useCategoryStore = create((set) => ({
   categorys: [],
   setCategorys: async (url) => {
     const response = await axios.get(urlBase + 'category')
-    set({ categorys: await response.data.data })
+    set({ categorys: response.data.data })
   }
 }))

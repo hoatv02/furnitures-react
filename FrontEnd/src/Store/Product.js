@@ -4,7 +4,7 @@ const urlBase = 'http://localhost:3000/'
 export const useProductStore = create((set) => ({
   url:urlBase,
   products: [],
-  setProducts: async (url) => {
+  setProducts: async () => {
     const response = await axios.get(urlBase + 'product')
     set({ products: await response.data.data })
   }
@@ -12,9 +12,11 @@ export const useProductStore = create((set) => ({
 export const useEditProductStore = create((set) => ({
   url:urlBase ,
   products: [],
-  setProducts: async (url) => {
-    const response = await axios.get(urlBase + `product/63ad2a313fd2fd6ed13da83c`)
-    console.log(response.data.data)
-    set({ products: await response.data.data })
+  setProducts: async (id,callback) => {
+    const response = await axios.get(urlBase + `product/${id}`)
+    console.log(callback(response))
+    // console.log(response.data.data)
+    set({ products:await response.data.data })
   }
+  
 }))
