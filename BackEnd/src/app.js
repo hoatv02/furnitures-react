@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import ProductRouter from './routes/Product/Product'
 import CategoryRouter from './routes/Category/Category'
+import path from 'path';
 
 const app = express();
 
@@ -11,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json())
-
+app.use('/image', express.static(path.join(__dirname + `\\UploadImage`)));
 app.use(ProductRouter)
 app.use(CategoryRouter)
 // connnect database

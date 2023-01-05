@@ -1,19 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AddProduct.module.css";
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
 import { useNavigate, useNavigation } from "react-router-dom";
 const AddProduct = () => {
   const navigate = useNavigate()
+  const [image, setImage] = useState("");
+
   const {
     register,
     handleSubmit,
     formState:{
       errors
     }
-  }= useForm()
+  }= useForm();
+  const handleImageChange = function (e) {
+    console.log(e)
+    setImage(URL.createObjectURL(e.target.files[0]));
+  };
+
   const onSubmit = async (product) => {
     try {
+      const formData = new FormData();
+      const fileName = product.image[0].name;
+      formData.append("name", fileName);
+      formData.append("image", product.image[0]);
+      await axios.post(`http://localhost:3000/uploadFile`, formData);
+      product.image = product.image[0].name;
+
       const {data} = await axios.post(`http://localhost:3000/product`,product)
       console.log('data',data)
       navigate('/admin/manageProduct')
@@ -60,9 +74,10 @@ const AddProduct = () => {
           </label>
           <input
             type="file"
+            onChange={handleImageChange}
             class="form-control"
-            id="file"
-            placeholder="1234 Main St" {...register('file')}
+            id="image"
+            placeholder="1234 Main St" {...register('image')}
           />
         </div>
         <div class="col-12">

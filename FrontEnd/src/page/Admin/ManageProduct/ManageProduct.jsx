@@ -71,8 +71,8 @@ const ManageProduct = () => {
                       <td class=" text-left">
                         <div class="flex items-center justify-center">
                           <img
+                          src={`http://localhost:3000/image/${item.image}`}
                             class="w-10 h-10 rounded-full border-gray-200 border transform hover:scale-125"
-                            src="https://randomuser.me/api/portraits/men/1.jpg"
                           />
                         </div>
                       </td>

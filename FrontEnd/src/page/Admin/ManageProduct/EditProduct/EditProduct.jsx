@@ -20,8 +20,9 @@ const EditProduct = () => {
   } = useForm();
 
   useEffect(() => {
-    // setProducts(id)
-    console.log(setProducts(id,(res)=>reset(res)));
+    setProducts(id, (res) => {
+      reset(res.data.data)
+    });
   }, [id]);
 
   const onSubmit = async (product) => {
