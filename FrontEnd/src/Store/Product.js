@@ -9,12 +9,13 @@ export const useProductStore = create((set) => ({
     set({ products: await response.data.data })
   }
 }))
-export const useEditProductStore = create((set) => ({
+export const useProductDetailStore = create((set) => ({
   url:urlBase ,
   products: [],
   setProducts: async (id,callback) => {
     const response = await axios.get(urlBase + `product/${id}`)
-    console.log(callback(response))
+    callback(response)
+    // console.log(response)
     // console.log(response.data.data)
     set({ products:await response.data.data })
   }

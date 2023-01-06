@@ -3,13 +3,10 @@ import styles from "./EditProduct.module.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate, useNavigation, useParams } from "react-router-dom";
-import {
-  useEditProductStore,
-  useProductStore,
-} from "../../../../Store/Product";
+import { useProductDetailStore } from "../../../../Store/Product";
 const EditProduct = () => {
-  const setProducts = useEditProductStore((state) => state.setProducts);
-  const products = useEditProductStore((state) => state.products);
+  const setProducts = useProductDetailStore((state) => state.setProducts);
+  const products = useProductDetailStore((state) => state.products);
   const navigate = useNavigate();
   const { id } = useParams();
   const {
@@ -21,7 +18,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     setProducts(id, (res) => {
-      reset(res.data.data)
+      reset(res.data.data);
     });
   }, [id]);
 

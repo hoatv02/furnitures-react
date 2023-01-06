@@ -16,7 +16,7 @@ const LayoutSite = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/productDetail" element={<ProductDetail/>} />
+        <Route path="/product/:id" element={<ProductDetail/>} />
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Register />} />

@@ -76,7 +76,9 @@ const AddProduct = () => {
             type="file"
             onChange={handleImageChange}
             class="form-control"
+            
             id="image"
+            multiple
             placeholder="1234 Main St" {...register('image')}
           />
         </div>

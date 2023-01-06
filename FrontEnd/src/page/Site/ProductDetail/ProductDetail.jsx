@@ -1,6 +1,15 @@
-import React from "react";
-import styles from './ProductDetail.module.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useProductDetailStore } from "../../../Store/Product";
+import styles from "./ProductDetail.module.css";
 const ProductDetail = () => {
+  const products = useProductDetailStore((state) => state.products);
+  const setProducts = useProductDetailStore((state) => state.setProducts);
+  const { id } = useParams();
+  useEffect(() => {
+  console.log(setProducts(id,(res)=>(res.data.data.id)));
+  }, [id]);
   return (
     <div>
       <div class="bg-white">
@@ -8,7 +17,7 @@ const ProductDetail = () => {
           <div class="mx-auto mt-6 mb-8 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
             <div class="aspect-w-2 aspect-h-1  overflow-hidden rounded-lg lg:block m-1">
               <img
-                src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
+                src={`http://localhost:3000/image/${products.image}`}
                 alt="Two each of gray, white, and black shirts laying flat."
                 class="h-full w-full object-cover object-center"
               />
@@ -31,8 +40,10 @@ const ProductDetail = () => {
             </div>
             <div class="aspect-w-4 aspect-h-2 mb-5  sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4 m-1">
               <div class=" lg:row-span-3 lg:mt-0">
-                <h2 class="text-2xl text-uppercase mb-3">Product information</h2>
-                <p class="text-3xl tracking-tight text-gray-900">$192</p>
+                <h2 class="text-3xl text-uppercase mb-3 ">
+                  {products.productName}
+                </h2>
+                <p class="text-2xl tracking-tight text-red-400">{products.price}  VND</p>
                 <div class="mt-2">
                   <h3 class="sr-only">Reviews</h3>
                   <div class="flex items-center">
@@ -345,7 +356,9 @@ const ProductDetail = () => {
           </div>
 
           <div class=" mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl border-t-2 lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className={`${styles.contentProduct} lg:col-span-2  lg:pr-8 mt-5 `}>
+            <div
+              className={`${styles.contentProduct} lg:col-span-2  lg:pr-8 mt-5 `}
+            >
               <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                 Basic Tee 6-Pack
               </h1>
