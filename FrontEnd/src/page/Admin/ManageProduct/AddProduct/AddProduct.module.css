@@ -10,6 +10,17 @@
 .addProduct{
     margin-left: 20px;
 }
-.addProduct button{
-    /* background-color: primary; */
+.imageShow{
+    width: 150px;
+    height: 150px;
+}
+.displayImage{
+    display:inline-flex;
+}
+.displayImage img{
+    /* margin-left: 5px; */
+    margin: 5px;
+}
+.btnAdd{
+    margin-left:0;
 }

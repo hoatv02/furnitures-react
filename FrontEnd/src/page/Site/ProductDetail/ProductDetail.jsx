@@ -8,7 +8,7 @@ const ProductDetail = () => {
   const setProducts = useProductDetailStore((state) => state.setProducts);
   const { id } = useParams();
   useEffect(() => {
-  console.log(setProducts(id,(res)=>(res.data.data.id)));
+    console.log(setProducts(id, (res) => res.data.data.id));
   }, [id]);
   return (
     <div>
@@ -25,14 +25,14 @@ const ProductDetail = () => {
             <div class=" lg:grid lg:grid-cols-1 lg:gap-y-8 ">
               <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+                  src={`http://localhost:3000/image/${products.image}`}
                   alt="Model wearing plain black basic tee."
                   class="h-full w-full object-cover object-center"
                 />
               </div>
               <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
+                  src={`http://localhost:3000/image/${products.image}`}
                   alt="Model wearing plain gray basic tee."
                   class="h-full w-full object-cover object-center"
                 />
@@ -43,7 +43,9 @@ const ProductDetail = () => {
                 <h2 class="text-3xl text-uppercase mb-3 ">
                   {products.productName}
                 </h2>
-                <p class="text-2xl tracking-tight text-red-400">{products.price}  VND</p>
+                <p class="text-2xl tracking-tight text-red-400">
+                  {products.price} VND
+                </p>
                 <div class="mt-2">
                   <h3 class="sr-only">Reviews</h3>
                   <div class="flex items-center">
@@ -204,83 +206,6 @@ const ProductDetail = () => {
                     <fieldset class="mt-5">
                       <legend class="sr-only">Choose a size</legend>
                       <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                        <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed">
-                          <input
-                            type="radio"
-                            name="size-choice"
-                            value="XXS"
-                            disabled
-                            class="sr-only"
-                            aria-labelledby="size-choice-0-label"
-                          />
-                          <span id="size-choice-0-label">XXS</span>
-
-                          <span
-                            aria-hidden="true"
-                            class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200"
-                          >
-                            <svg
-                              class="absolute inset-0 h-full w-full stroke-2 text-gray-200"
-                              viewBox="0 0 100 100"
-                              preserveAspectRatio="none"
-                              stroke="currentColor"
-                            >
-                              <line
-                                x1="0"
-                                y1="100"
-                                x2="100"
-                                y2="0"
-                                vector-effect="non-scaling-stroke"
-                              />
-                            </svg>
-                          </span>
-                        </label>
-
-                        <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="size-choice"
-                            value="XS"
-                            class="sr-only"
-                            aria-labelledby="size-choice-1-label"
-                          />
-                          <span id="size-choice-1-label">XS</span>
-                          <span
-                            class="pointer-events-none absolute -inset-px rounded-md"
-                            aria-hidden="true"
-                          ></span>
-                        </label>
-
-                        <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="size-choice"
-                            value="S"
-                            class="sr-only"
-                            aria-labelledby="size-choice-2-label"
-                          />
-                          <span id="size-choice-2-label">S</span>
-                          <span
-                            class="pointer-events-none absolute -inset-px rounded-md"
-                            aria-hidden="true"
-                          ></span>
-                        </label>
-
-                        <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="size-choice"
-                            value="M"
-                            class="sr-only"
-                            aria-labelledby="size-choice-3-label"
-                          />
-                          <span id="size-choice-3-label">M</span>
-                          <span
-                            class="pointer-events-none absolute -inset-px rounded-md"
-                            aria-hidden="true"
-                          ></span>
-                        </label>
-
                         <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
                           <input
                             type="radio"

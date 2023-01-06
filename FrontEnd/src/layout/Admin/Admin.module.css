@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pattaya&display=swap');
 .container{
     display: flex;
+    font-family: 'Montserrat', sans-serif;
 }
 .body{
     width: 100%;
+    background-color: aliceblue;
+    height: 100vh;
 }
 /* .dark {
     background-color: #333;
@@ -15,7 +19,7 @@
 } */
 .oulet{
     padding: 10px;
-    height: 70vh;
+    height:80vh;
 }
 .pagination{
     float: right;

@@ -3,7 +3,7 @@ import styles from "./FooterSection.module.css";
 const FooterSection = () => {
   return (
     <div className={styles.Footer}>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class=" border-gray-200 sm:mx-auto dark:border-gray-700 " />
       <div class="sm:flex sm:items-center sm:justify-between px-3">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2022{" "}

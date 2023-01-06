@@ -23,24 +23,24 @@ const AddCategory = () => {
    
   return (
     <div className=''>
-    <h1 class='text-3xl py-3 font-bold text-uppercase'>Thêm mới danh mục</h1>
+    <h1 class='text-3xl py-3 font-bold text-uppercase border-b-1'>Thêm mới danh mục</h1>
     <form class="row g-3 max-w-2xl" onSubmit={handleSubmit(onSubmit)}>
       <div class="col-md-8">
         <label for="CategoryID" class="form-label">
           CategoryID
         </label>
-        <input type="text" class="form-control" id="CategoryID"   disabled/>
+        <input type="text" class="form-control rounded-lg" id="CategoryID"   disabled/>
       </div>
       
       <div class="col-md-8">
         <label for="categoryName" class="form-label">
           Category Name
         </label>
-        <input type="text" class="form-control" id="categoryName"  {...register("categoryName")}/>
+        <input type="text" class="form-control rounded-lg" id="categoryName"  {...register("categoryName")}/>
       </div>
       <div class="col-12">
-        <button  class="btn btn-danger text-red-500">
-          Sign in
+        <button  class="btn btn-danger text-white-500">
+          Thêm mới danh mục
         </button>
       </div>
     </form>

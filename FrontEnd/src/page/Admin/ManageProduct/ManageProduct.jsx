@@ -22,7 +22,7 @@ const ManageProduct = () => {
   return (
     <div>
       <div className={`${styles.container} overflow-x-auto`}>
-        <h1 class="text-3xl py-3 font-bold text-uppercase">Manage Product</h1>
+        <h1 class="text-3xl py-3 ">Quản lý sản phẩm</h1>
         <div class="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
           <div class="w-full ">
             <div class=" shadow-md rounded">
