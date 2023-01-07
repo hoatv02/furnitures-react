@@ -19,7 +19,6 @@ const Admin = () => {
 
         <div className={`${styles.oulet}`}>
           <Outlet />
-
         </div>
         <FooterSection />
       </div>

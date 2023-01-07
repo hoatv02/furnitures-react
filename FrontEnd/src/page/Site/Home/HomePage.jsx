@@ -3,6 +3,7 @@ import Banner from "./Banner/Banner";
 import NavbarLeftHome from "./NavbarLeft/NavbarLeftHome";
 import styles from './HomePage.module.css'
 import About from "./About/About";
+import GiftProducts from "./GiftProducts/GiftProducts";
 const HomePage = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const HomePage = () => {
       </div>
       <div className={styles.contentHome}>
         <NavbarLeftHome />
+        <GiftProducts/>
         <About/>
       </div>
       <div>

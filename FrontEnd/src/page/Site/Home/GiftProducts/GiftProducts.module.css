@@ -1,0 +1,27 @@
+.gift_Cotainer{
+    display: flex;
+    text-align: center;
+    width: 100% !important;
+    justify-content: center;
+    background-color: #545453;
+    height:240px;
+    opacity: .7;
+    align-items: center;
+}
+.containers{
+    background:url('https://mocminhduc.com/wp-content/uploads/2021/05/bo-ban-ghe-duoi-3-trieu-phong-khach.jpg');
+    opacity: 1;
+
+}
+.gift_Cotainer li{
+    padding:20px 30px;
+}
+.Icon{
+    font-size: 50px !important;
+    color:#FFD864;
+    margin-bottom: 10px;
+    /* width: 20px; */
+}
+.title_Gift{
+    padding: 5px !important;
+}

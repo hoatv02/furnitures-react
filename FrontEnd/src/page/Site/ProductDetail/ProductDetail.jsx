@@ -40,10 +40,10 @@ const ProductDetail = () => {
             </div>
             <div class="aspect-w-4 aspect-h-2 mb-5  sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4 m-1">
               <div class=" lg:row-span-3 lg:mt-0">
-                <h2 class="text-3xl text-uppercase mb-3 ">
+                <h2 class="text-3xl text-uppercase mb-3 font-bold ">
                   {products.productName}
                 </h2>
-                <p class="text-2xl tracking-tight text-red-400">
+                <p class="text-1xl tracking-tight text-red-400">
                   {products.price} VND
                 </p>
                 <div class="mt-2">

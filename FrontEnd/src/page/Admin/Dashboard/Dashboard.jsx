@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <section class="text-gray-600 body-font  h-screen">
+    <sectio class="text-gray-600 body-font ">
       <div class="flex flex-wrap  text-center">
         <div class="p-4 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">
           <div class=" flex items-center  justify-between p-4  rounded-lg bg-white  shadow-md">
@@ -89,7 +89,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </section>
+    </sectio>
   );
 };
 
