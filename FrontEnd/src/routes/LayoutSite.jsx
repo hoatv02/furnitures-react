@@ -7,7 +7,7 @@ import HomePage from "../page/Site/Home/HomePage";
 import Product from "../page/Site/Product/Product";
 import Site from "../layout/Site/Site";
 import ProductDetail from '../page/Site/ProductDetail/ProductDetail'
-import About from "../page/Site/Home/About/About";
+import About from "../page/Site/About/About";
 const LayoutSite = () => {
   return (
     <Routes>

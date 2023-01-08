@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import ProductRouter from './routes/Product/Product'
 import CategoryRouter from './routes/Category/Category'
+import AuthRouter from './routes/Auth/Auth'
+
 import path from 'path';
 
 const app = express();
@@ -15,6 +17,7 @@ app.use(express.json())
 app.use('/image', express.static(path.join(__dirname + `\\UploadImage`)));
 app.use(ProductRouter)
 app.use(CategoryRouter)
+app.use(AuthRouter)
 // connnect database
 mongoose.connect('mongodb://localhost:27017/furnitureShop')
     .then(() => console.log("Kết nối db thành công"))

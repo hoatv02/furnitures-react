@@ -6,19 +6,3 @@
     padding: 20px;
     font-weight: 700;
 }
-.stande img{
-    transition: all 2s ease-in-out;
-    opacity: .9;
-}
-.stande img:hover{
-    /* padding: 10px; */
-    transform: scale(1.1);
-    opacity: 1;
-    /* transition: 4 ease; */
-}
-.infoAbout img{
-    transition: all .55s ease-in-out;
-}
-.infoAbout img:hover{
-    transform : scale(1.1);
-}

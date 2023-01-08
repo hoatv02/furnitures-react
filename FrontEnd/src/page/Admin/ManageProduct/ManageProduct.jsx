@@ -29,20 +29,19 @@ const ManageProduct = () => {
               <table class="min-w-max w-full table-auto">
                 <thead>
                   <tr class="  opacity-100  uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">STT</th>
-                    <th class="py-3 px-6 text-left">Product Name</th>
-
-                    <th class="py-3 px-6 text-left">Price</th>
-                    <th class="py-3 px-6 text-left">Quantity</th>
-                    <th class="py-3 px-6 text-center">Image</th>
-                    <th class="py-3 px-6 text-left">Category</th>
-                    <th class="py-3 px-6 text-center">Actions</th>
+                    <th class="py-3 px-2 text-left">STT</th>
+                    <th class="py-3 px-3 text-left">Product Name</th>
+                    <th class="py-3 px-3 text-left">Price</th>
+                    <th class="py-3 px-3 text-left">Quantity</th>
+                    <th class="py-3 px-3 text-center">Image</th>
+                    <th class="py-3 px-3 text-left">Category</th>
+                    <th class="py-3 px-3 text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody class=" text-sm font-light">
                   {products.map((item, index) => {
                     return (
-                      <tr class="border-b  " key={index}>
+                      <tr class="border-b" key={index}>
                         <td class=" px-3 text-left whitespace-nowrap">
                           <div class="flex items-center">
                             <span class="font-medium">{index + 1}</span>
@@ -127,7 +126,7 @@ const ManageProduct = () => {
           </div>
         </div>
       </div>
-      <Pagination count={10} color="primary" className={styles.pagination} />
+          <Pagination/>
     </div>
   );
 };

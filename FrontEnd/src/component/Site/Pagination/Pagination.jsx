@@ -1,11 +1,9 @@
-import * as React from 'react';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import React from 'react'
 
-export default function BasicPagination() {
+const Pagination = () => {
   return (
-    <Stack spacing={2}>
-      <Pagination count={10} color="primary" />
-    </Stack>
-  );
+    <div>Pagination</div>
+  )
 }
+
+export default Pagination

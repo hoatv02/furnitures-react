@@ -4,6 +4,7 @@ import NavbarLeftHome from "./NavbarLeft/NavbarLeftHome";
 import styles from './HomePage.module.css'
 import About from "./About/About";
 import GiftProducts from "./GiftProducts/GiftProducts";
+import InForAbout from "./InForAbout/InForAbout";
 const HomePage = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const HomePage = () => {
         <NavbarLeftHome />
         <GiftProducts/>
         <About/>
+        <InForAbout/>
       </div>
       <div>
       </div>

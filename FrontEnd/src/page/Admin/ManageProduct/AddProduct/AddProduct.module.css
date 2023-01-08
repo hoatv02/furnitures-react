@@ -1,11 +1,15 @@
 .addProduct input{
     border-radius:2px;
+    border: none;
 }
 .addProduct select{
     height: 38px;
+    border: none;
 }
 .addProduct textarea{
     border-radius: 2px;
+    border: none;
+
 }
 .addProduct{
     margin-left: 20px;

@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <section class="bg-white dark:bg-gray-900">
-        <div class="   mx-auto">
+        <div class="mx-auto">
           <div class="lg:flex lg:-mx-2">
             <div class="mt-6 lg:mt-0 lg:px-2 lg:w-4/5 ">
               <div class="mb-20">
@@ -33,7 +33,7 @@ const About = () => {
                         loading="lazy"
                         class="h-100 sm:h-full  sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl"
                       />
-                      <div class="sm:w-7/12 pl-0 p-2">
+                      <div class="sm:w-7/12 pl-0 p-10">
                         <div class="space-y-2">
                           <div class="space-y-4">
                             <h4 class="text-2xl  text-cyan-900">
@@ -58,17 +58,17 @@ const About = () => {
                         src="https://khobanghe.vn/wp-content/uploads/2017/09/bo-ban-an-ashley.png"
                         alt="art cover"
                         loading="lazy"
-                        width="1000"
+                        width="1000" 
                         height="667"
                         class="h-100 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl"
                       />
-                      <div class="sm:w-7/12 pl-0 p-2">
+                      <div class="sm:w-7/12 pl-0 p-10 ">
                         <div class="space-y-2">
                           <div class="space-y-4">
                             <h4 class="text-2xl font-semibold text-cyan-900">
                               BỘ BÀN ĂN KUDO
                             </h4>
-                            <p class="text-gray-600 md:hidden">
+                            <p class="text-gray-600">
                               <p>Chất liệu : Gỗ cao su.</p>
                               <p>Màu sắc : Gỗ màu nâu / vàng tự nhiên.…</p>
                             </p>
@@ -84,7 +84,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div class="pt-16 pb-0 bg-white">
+                <div class="pt-16 mt-20 pb-0 bg-white">
                     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                       <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                         <div class="md:5/12 lg:w-5/12">
