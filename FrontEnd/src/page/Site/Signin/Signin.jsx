@@ -1,8 +1,30 @@
-import React from "react";
-import GoogleIcon from '@mui/icons-material/Google';
-
+import React, { useState } from "react";
+import GoogleIcon from "@mui/icons-material/Google";
 import styles from "./Signin.module.css";
+import { useNavigate } from "react-router-dom"
+import axios from "axios";
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [accessToken, setAccessToken] = useState("");
+  const navigate = useNavigate()
+  const Login = async (e) => {
+    e.preventDefault()
+    try {
+      console.log(email,password)
+      const { data } = await axios.post(`http://localhost:3000/signin`, {
+        email,
+        password
+      });
+      if (data) {
+        localStorage.setItem("AccessToken", JSON.stringify(data));
+        setAccessToken(data);
+        alert("AccessToken")
+        navigate('/')
+      }
+    } catch (error) {}
+  };
+
   return (
     <section className={styles.signinForm}>
       <div className={styles.imgBox}>
@@ -16,12 +38,20 @@ const Signin = () => {
           <h2>Login</h2>
           <form action="">
             <div className={styles.inputBox}>
-              <span>Username</span>
-              <input type="text" name="" />
+              <span>Email</span>
+              <input
+                type="text"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className={styles.inputBox}>
               <span>Password</span>
-              <input type="password" name="" />
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <div className={styles.remember}>
               <label htmlFor="">
@@ -29,7 +59,9 @@ const Signin = () => {
               </label>
             </div>
             <div className={styles.inputBox}>
-              <input type="submit" name="" value="Sign in" />
+              <button name="" type="submit" onClick={Login}>
+                Sign in
+              </button>
             </div>
             <div className={styles.inputBox}>
               <p>
