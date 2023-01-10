@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import Profile from "../Profile/Profile";
 const navigation = {
   categories: [],
   pages: [
@@ -23,8 +24,8 @@ function classNames(...classes) {
 
 export default function HeaderPage() {
   const [open, setOpen] = useState(false);
-
-  return (
+  const [isLogin] = useState(localStorage.getItem('AccessToken') != null)
+    return (
     <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
@@ -74,27 +75,6 @@ export default function HeaderPage() {
                     </div>
                   ))}
                 </div>
-
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <div className="flow-root">
-
-                    <Link
-                      to='/signin'
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Đăng nhập
-                    </Link>
-                  </div>
-                  <div className="flow-root">
-                    <Link
-                      to="/register"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Đăng kí
-                    </Link>
-                  </div>
-                </div>
-
                 {/* <div className="border-t border-gray-200 py-6 px-4">
                   <Link to="#" className="-m-2 flex items-center p-2">
                     <img
@@ -154,39 +134,7 @@ export default function HeaderPage() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link
-                    to="/signin"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Đăng nhập
-                  </Link>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <Link
-                    to="/register"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Đăng kí
-                  </Link>
-                </div>
-
-                {/* <div className="hidden lg:ml-8 lg:flex">
-                  <Link
-                    to="/register"
-                    className="flex items-center text-gray-700 hover:text-gray-800"
-                  >
-                    <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-sm font-medium">CAD</span>
-                    <span className="sr-only">, change currency</span>
-                  </Link>
-                </div> */}
-
-                {/* Search */}
-                <div className="flex lg:ml-6">
+              <div className="flex lg:ml-6">
                   <Link
                     to="#"
                     className="p-2 text-gray-400 hover:text-gray-500"
@@ -212,6 +160,43 @@ export default function HeaderPage() {
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
+                {
+                  isLogin ? <Profile/> :(
+                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  <Link
+                    to="/signin"
+                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >
+                    Đăng nhập
+                  </Link>
+                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  <Link
+                    to="/register"
+                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >
+                    Đăng kí
+                  </Link>
+                </div>
+                  )
+                }
+
+                {/* <div className="hidden lg:ml-8 lg:flex">
+                  <Link
+                    to="/register"
+                    className="flex items-center text-gray-700 hover:text-gray-800"
+                  >
+                    <img
+                      src="https://tailwindui.com/img/flags/flag-canada.svg"
+                      alt=""
+                      className="block h-auto w-5 flex-shrink-0"
+                    />
+                    <span className="ml-3 block text-sm font-medium">CAD</span>
+                    <span className="sr-only">, change currency</span>
+                  </Link>
+                </div> */}
+
+                {/* Search */}
+                
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import styles from "./Signin.module.css";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const Signin = () => {
   const Login = async (e) => {
     e.preventDefault()
     try {
-      console.log(email,password)
+      // console.log(email,password)
       const { data } = await axios.post(`http://localhost:3000/signin`, {
         email,
         password
@@ -19,7 +19,6 @@ const Signin = () => {
       if (data) {
         localStorage.setItem("AccessToken", JSON.stringify(data));
         setAccessToken(data);
-        alert("AccessToken")
         navigate('/')
       }
     } catch (error) {}
@@ -29,7 +28,7 @@ const Signin = () => {
     <section className={styles.signinForm}>
       <div className={styles.imgBox}>
         <img
-          src="https://images.pexels.com/photos/14579203/pexels-photo-14579203.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+          src="https://e.khoahoc.tv/photos/image/012013/04/thiennhiennuocphap4.jpg"
           alt=""
         />
       </div>
@@ -65,7 +64,7 @@ const Signin = () => {
             </div>
             <div className={styles.inputBox}>
               <p>
-                Don't have an account? <a href="">Sign up</a>
+                Don't have an account? <Link to="/register">Sign up</Link>
               </p>
             </div>
           </form>

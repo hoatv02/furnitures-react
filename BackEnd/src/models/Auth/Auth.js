@@ -19,7 +19,7 @@ const AuthSchema  = mongoose.Schema({
             type: Number,
         },
         address : {
-            required: true,
+            // required: true,
             type: String,
         }
 
