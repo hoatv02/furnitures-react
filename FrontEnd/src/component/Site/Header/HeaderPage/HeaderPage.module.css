@@ -1,0 +1,27 @@
+.InputSearch {
+    border-radius: 10px;
+    height: 35px;
+    font-size: .8rem;
+    padding: 10px;
+    border: 1px solid rgb(195, 193, 193);
+
+}
+
+.InputSearch:focus {
+    outline: none;
+    border: 1px solid rgb(195, 193, 193);
+
+}
+
+.iconSearch {
+    width: 100%;
+    position: absolute;
+    opacity: .8;
+    color:rgb(102, 101, 101);
+    margin-left: 87%;
+    margin-top: 10px;
+}
+
+.searchBox {
+    position: relative;
+}

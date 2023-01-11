@@ -5,7 +5,22 @@
     height: 100vh;
     display: flex;
 }
-
+.homePage{
+    color:black;
+    text-decoration: none;
+    margin-left: 100px;
+    /* font-weight: 700; */
+    cursor: pointer;
+    font-size: .7rem;
+    margin-top: 10px;
+    justify-items: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.homePage a:hover{
+    text-decoration: none;
+    color:#ff4584;
+}
 .signinForm .imgBox {
     position: relative;
     width: 70%;

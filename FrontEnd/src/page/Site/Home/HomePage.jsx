@@ -1,26 +1,27 @@
-import React from "react";
-import Banner from "./Banner/Banner";
-import NavbarLeftHome from "./NavbarLeft/NavbarLeftHome";
+import React from 'react'
 import styles from './HomePage.module.css'
-import About from "./About/About";
-import GiftProducts from "./GiftProducts/GiftProducts";
-import InForAbout from "./InForAbout/InForAbout";
+import Banner from '../../../component/Site/Home/Banner/Banner'
+import NavbarLeftHome from '../../../component/Site/Home/NavbarLeft/NavbarLeftHome'
+import GiftProducts from '../../../component/Site/Home/GiftProducts/GiftProducts'
+import About from '../../../component/Site/Home/About/About'
+import InForAbout from '../../../component/Site/Home/InForAbout/InForAbout'
+
 const HomePage = () => {
   return (
     <div>
-      <div className={styles.bannerPage}>
-        <Banner />
-      </div>
-      <div className={styles.contentHome}>
-        <NavbarLeftHome />
-        <GiftProducts/>
-        <About/>
-        <InForAbout/>
-      </div>
-      <div>
-      </div>
+    <div className={styles.bannerPage}>
+      <Banner/>
     </div>
-  );
-};
+    <div className={styles.contentHome}>
+      <NavbarLeftHome />
+      <GiftProducts/>
+      <About/>
+      <InForAbout/>
+    </div>
+    <div>
+    </div>
+  </div>
+  )
+}
 
-export default HomePage;
+export default HomePage

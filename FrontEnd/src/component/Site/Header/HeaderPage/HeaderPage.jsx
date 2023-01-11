@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import styles from './HeaderPage.module.css'
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -134,17 +134,10 @@ export default function HeaderPage() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-              <div className="flex lg:mr-6">
-                  <Link
-                    to="#"
-                    className="p-2 text-gray-400 hover:text-gray-500"
-                  >
+              <div className={`${styles.searchBox} flex lg:mr-6`}>
                     {/* <span className="sr-only">Search</span> */}
-                    <MagnifyingGlassIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                   />
-                  </Link>
+                    <input  className={styles.InputSearch} placeholder='Tìm kiếm...'/>
+                    <i className={`${styles.iconSearch} fa-solid fa-magnifying-glass`}></i>
                 </div>
 
                 {/* Cart */}

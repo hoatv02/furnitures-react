@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./About.module.css";
 const About = () => {
+  const [isLogin] = useState(localStorage.getItem('AccessToken') != null)
+
   return (
     <div>
       <section class="bg-white dark:bg-gray-900">
@@ -133,7 +135,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1618172193622-ae2d025f4032?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+                          src="https://tse3.mm.bing.net/th?id=OIP.4NEmZS2nAtBuX3qc3kdQEgHaFD&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -159,7 +161,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-violate bg-gradient-to-r from-pink-50 to-red-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1624628639856-100bf817fd35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8M2QlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                          src="https://tse3.explicit.bing.net/th?id=OIP.7Euqdprlyi6zQPdfhQWRogHaE7&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -185,7 +187,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-pink bg-gradient-to-r from-fuchsia-50 to-pink-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1631700611307-37dbcb89ef7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60"
+                          src="https://tse4.mm.bing.net/th?id=OIP.tiSabsrtBK_fmku4OCH7CgHaFj&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -216,7 +218,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1618172193622-ae2d025f4032?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
+                          src="https://tse4.mm.bing.net/th?id=OIP.BdjixXzxQ1PCarxXbbPMrQHaE8&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -242,7 +244,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-violate bg-gradient-to-r from-pink-50 to-red-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1624628639856-100bf817fd35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8M2QlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                          src="https://tse4.mm.bing.net/th?id=OIP.mLCSC_IHOoJxjw10YSTv3gHaFj&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -268,7 +270,7 @@ const About = () => {
                       <div class="h-full rounded-xl shadow-cla-pink bg-gradient-to-r from-fuchsia-50 to-pink-50 overflow-hidden">
                         <img
                           class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
-                          src="https://images.unsplash.com/photo-1631700611307-37dbcb89ef7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60"
+                          src="https://tse4.mm.bing.net/th?id=OIP.tl8sbwtWZ81spGQc2D44vwHaFU&pid=Api&P=0"
                           alt="blog"
                         />
                         <div class="p-6">
@@ -321,9 +323,19 @@ const About = () => {
                     className="w-full rounded-md border"
                     placeholder="Message..."
                   ></textarea>
-                  <h3 className="p-2 bg-gray-100 mt-2 mb-2 m-0 text-center">
-                    SEN MESSAGE
-                  </h3>
+                   {
+                    isLogin ? (
+                      <button className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md" disabled>
+                      SEN MESSAGE
+                    </button>
+                    ) : 
+                   <div>
+                   <button className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md">
+                  SEN MESSAGE
+                </button>
+                <p class='text-red-500 font-bold text-sm my-10'>Vui lòng đăng nhập để thực hiện chức năng này !</p>
+                 </div>
+                   }
                 </form>
               </div>
             </div>

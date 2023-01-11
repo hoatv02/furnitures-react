@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import styles from "./Signin.module.css";
 import { Link, useNavigate } from "react-router-dom"
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+
 import axios from "axios";
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +36,16 @@ const Signin = () => {
       </div>
       <div className={styles.contentBox}>
         <div className={styles.formBox}>
-          <h2>Login</h2>
+        <div class="inline-flex">
+                <div>
+                  <h2>REGISTER</h2>
+                </div>
+                <div className={styles.homePage}>
+                  <Link to="/">
+                    Về trang chủ <ArrowRightAltIcon />{" "}
+                  </Link>
+                </div>
+              </div>
           <form action="">
             <div className={styles.inputBox}>
               <span>Email</span>
