@@ -4,10 +4,15 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CloseIcon from "@mui/icons-material/Close";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import Loading from "../../../component/Site/Loading/Loading";
 const Registers = () => {
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
-  //   const [loading,setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -15,20 +20,22 @@ const Registers = () => {
   } = useForm();
   const onSubmit = async (user) => {
     try {
-        const { data } = await axios.post(`http://localhost:3000/signup`, user);
+      // const { data } = await axios.post(`http://localhost:3000/signup`, user);
+      //  setLoading(true)
+      // setLoading(true);
       setModal(true);
-        alert("ok");
       setTimeout(() => {
-        
         setModal(false);
-        // setModal(!modal);
       }, 10000000000000000);
       // navigate("/signin");
-    } catch (error) {}
+    } catch (error) {
+    }
+    // setLoading(false);
   };
+
   const removeModal = () => {
     setModal(false);
-    navigate("/signin");
+    // navigate("/signin");
   };
   return (
     <div>
@@ -83,7 +90,7 @@ const Registers = () => {
             <h3>Login with social media </h3>
             <ul className={styles.iconSignin}>
               <li>
-                <GoogleIcon />
+                <FacebookOutlinedIcon />
               </li>
               <li>
                 <GoogleIcon />
@@ -95,6 +102,7 @@ const Registers = () => {
           </div>
         </div>
       </section>
+       {/* {loading ? <Loading/> :  <div> */}
       {modal ? (
         <div
           class="relative z-10 "
@@ -106,32 +114,37 @@ const Registers = () => {
           <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
               <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <p class="justify-right text-right p-2">
+                  <CloseIcon onClick={() => removeModal()} />
+                </p>
+
+                <div class="bg-white px-4 pt-2 pb-4 sm:p-6 sm:pb-4">
                   <div class="sm:flex sm:items-start">
-                    <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"></div>
                     <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                      <p class="pb-6">
+                        <CheckCircleIcon className={styles.iconSuccess} />
+                      </p>
                       <h3
                         class="text-lg font-medium leading-6 text-gray-900"
                         id="modal-title"
                       >
-                        Deactivate account
+                        Bạn đã đăng kí tài khoản thành công
                       </h3>
                       <div class="mt-2">
                         <p class="text-sm text-gray-500">
-                          Are you sure you want to deactivate your account? All
-                          of your data will be permanently removed. This action
-                          cannot be undone.
+                          Hãy đăng nhập ngay để trải nghiệm website một cách tốt
+                          nhất !!!
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <div class="bg-gray-50 px-4 py-4 sm:flex sm:flex-row justify-center sm:px-6 text-align:center">
                   <button
                     onClick={() => removeModal()}
-                    class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                    class=" inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   >
-                    Login
+                    <ArrowRightAltIcon /> Trang Đăng Nhập
                   </button>
                 </div>
               </div>
@@ -139,6 +152,8 @@ const Registers = () => {
           </div>
         </div>
       ) : null}
+      {/* </div>} */}
+     
     </div>
   );
 };

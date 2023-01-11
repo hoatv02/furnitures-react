@@ -27,7 +27,7 @@ export default function Profile() {
 
   const removeAccessToken = () => {
     localStorage.removeItem("AccessToken");
-    navigate("/login");
+    navigate("/signin");
   };
 
   return (
@@ -37,7 +37,7 @@ export default function Profile() {
           <IconButton
             onClick={handleClick}
             size="small"
-            sx={{ ml: 2 }}
+            // sx={{ ml: 2 }}
           >
             <Avatar sx={{ width: 32, height: 32 }}></Avatar>
             {/* <Avatar >H</Avatar> */}

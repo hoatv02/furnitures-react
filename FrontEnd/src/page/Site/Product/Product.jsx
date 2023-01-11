@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ListCategory from "../../../component/Site/ListCategory/ListCategory";
+import Loading from "../../../component/Site/Loading/Loading";
 import BasicPagination from '../../../component/Site/Pagination/Pagination'
 import { useProductStore } from "../../../Store/Product";
 import styles from './Product.module.css'

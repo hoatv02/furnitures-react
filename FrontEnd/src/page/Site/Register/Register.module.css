@@ -5,7 +5,12 @@
     height: 100vh;
     display: flex;
 }
-
+.iconSuccess{
+    font-size: 30px;
+    height: 100px !important;
+    color:#ff4584;
+    width: 100px !important;
+}
 .signinForm .imgBox {
     position: relative;
     width: 80%;

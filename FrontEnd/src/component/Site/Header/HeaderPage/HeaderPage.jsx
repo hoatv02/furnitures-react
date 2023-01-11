@@ -134,7 +134,7 @@ export default function HeaderPage() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-              <div className="flex lg:ml-6">
+              <div className="flex lg:mr-6">
                   <Link
                     to="#"
                     className="p-2 text-gray-400 hover:text-gray-500"
@@ -148,7 +148,9 @@ export default function HeaderPage() {
                 </div>
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
+                {
+                  isLogin ? (
+                    <div className="ml-4 flow-root lg:mr-6">
                   <Link to="#" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -160,8 +162,10 @@ export default function HeaderPage() {
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
+                  ) : null
+                }
                 {
-                  isLogin ? <Profile/> :(
+                  isLogin ? <Profile /> :(
                     <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <Link
                     to="/signin"

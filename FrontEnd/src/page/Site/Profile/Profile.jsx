@@ -36,7 +36,7 @@ const Profile = () => {
           <h5>DETAIL</h5>
           <br></br>
           <h6>Name : {getInfoUser.data.userName}</h6><br></br>
-          <h6>Phone : {getInfoUser.data.phone} </h6><br></br>
+          <h6>Phone : {getInfoUser.data.phoneNumber} </h6><br></br>
           <h6>Email : {getInfoUser.data.email}</h6><br></br>
           <h6>Address : {getInfoUser.data.address}</h6>
         </div>
