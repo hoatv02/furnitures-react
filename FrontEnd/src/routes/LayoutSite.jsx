@@ -9,6 +9,8 @@ import ProductDetail from '../page/Site/ProductDetail/ProductDetail'
 import About from "../page/Site/About/About";
 import Registers from "../page/Site/Register/Register";
 import Profile from "../page/Site/Profile/Profile";
+import Cart from "../page/Site/MyCart/Cart";
+import CheckoutMyCart from "../page/Site/CheckoutMyCart/CheckoutMyCart";
 const LayoutSite = () => {
   return (
     <Routes>
@@ -18,6 +20,9 @@ const LayoutSite = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/CheckCart" element={<CheckoutMyCart />} />
+
         <Route path="/product/:id" element={<ProductDetail/>} />
       </Route>
       <Route path="/signin" element={<Signin />} />
