@@ -4,8 +4,8 @@ const urlBase = 'http://localhost:3000/'
 export const useProductStore = create((set) => ({
   url:urlBase,
   products: [],
-  setProducts: async () => {
-    const response = await axios.get(urlBase + 'product')
+  setProducts: async (products) => {
+    const response = await axios.get(urlBase + 'product/' + products)
     set({ products: await response.data.data })
   }
 }))
@@ -19,3 +19,14 @@ export const useProductDetailStore = create((set) => ({
   }
   
 }))
+
+// export const useSearchProductStore = create((set) => ({
+//   url:urlBase,
+//   key:[],
+//   setKey : async (key)=>{
+//     console.log(key)
+//     const response = await axios.get(urlBase + `search/` + key)
+//     set({key : await response.data.data})
+//   }
+  
+// }))

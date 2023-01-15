@@ -25,3 +25,29 @@ export const productDetail = async (req,res)=>{
         })
     }
 }
+
+export const FindProduct = async (req, res) => {
+    try {
+        const key = req.params.key;
+        if(key === ''){
+            const product = await Product.find();
+            return res.status(200).json({
+                data:product
+            })
+
+        }
+        const data = await Product.find({
+            '$or':[{
+                productName:{$regex:key , $options : 'i'}
+            }]
+        })
+        res.status(200).json({
+            data:data ,
+            message:"Tìm sản phẩm thành công"
+        })
+    } catch (error) {
+        res.status(400).json({
+            message:"Tìm sản phẩm thất bại"
+        })
+    }
+}
