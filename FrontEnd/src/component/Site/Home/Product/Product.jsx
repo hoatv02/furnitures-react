@@ -137,7 +137,7 @@ import styles from './Product.module.css'
     const products = useProductStore((state)=>state.products)
     const setProducts = useProductStore((state)=>state.setProducts)
     useEffect(()=>{
-      setProducts()
+      setProducts(products)
     },[])
     return (
       <div className="bg-white">

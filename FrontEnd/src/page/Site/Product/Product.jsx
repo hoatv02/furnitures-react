@@ -1,8 +1,10 @@
+import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ListCategory from "../../../component/Site/ListCategory/ListCategory";
 import Loading from "../../../component/Site/Loading/Loading";
 import BasicPagination from '../../../component/Site/Pagination/Pagination'
+import { useCategoryStore } from "../../../Store/Category";
 import { useProductStore } from "../../../Store/Product";
 import styles from './Product.module.css'
 
@@ -12,7 +14,6 @@ export default function Product() {
   useEffect(()=>{
     setProducts(products)
   },[])
-  
   return (
     <div className={`${styles.container_product} bg-white`}>
       <div className="mx-auto max-w-2xl py-2 px-2 sm:py-24 sm:px-4 lg:max-w-full lg:px-2">

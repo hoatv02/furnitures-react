@@ -9,3 +9,9 @@ export const useCategoryStore = create((set) => ({
     set({ categorys: response.data.data })
   }
 }))
+
+export const useCategoryChangeStore = create((set) => ({
+  categoryName: '',
+  setCategoryName: (value) => set((state) => ({ categoryName: value })),
+
+}))

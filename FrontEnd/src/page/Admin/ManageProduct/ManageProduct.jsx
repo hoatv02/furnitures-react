@@ -12,7 +12,7 @@ const ManageProduct = () => {
   const setProducts = useProductStore((state) => state.setProducts);
   const products = useProductStore((state) => state.products);
   useEffect(() => {
-    setProducts();
+    setProducts(products);
   }, []);
   const {id} = useParams()
   const removeItem = async (id) => {
