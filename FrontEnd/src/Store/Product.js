@@ -5,7 +5,7 @@ export const useProductStore = create((set) => ({
   url:urlBase,
   products: [],
   setProducts: async (products) => {
-    const response = await axios.get(urlBase + 'product/' + products)
+    const response = await axios.get(urlBase + 'product' + products)
     set({ products: await response.data.data })
   }
 }))

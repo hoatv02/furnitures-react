@@ -11,10 +11,8 @@ import DarkMode from "../DarkMode/DarkMode";
 const SideBar = () => {
   return (
     <div className={`${styles.container} min-h-screen shadow-lg `}>
-      <div class="sidebar  min-h-screen  overflow-hidden border-r  hover:bg-dark hover:shadow-lg">
-        <div class="flex h-screen flex-col justify-between pt-2 pb-6">
-          {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
-
+      <div class="sidebar  h-full  overflow-hidden border-r  hover:bg-dark hover:shadow-lg">
+        <div class="flex h-full flex-col justify-between pt-2 pb-6">
           <div>
             <div class="w-max border-b-2 ">
               <Link to="/">
@@ -25,51 +23,51 @@ const SideBar = () => {
                 />
               </Link>
             </div>
-            <ul className={`${styles.list} mt-6 space-y-2 tracking-wide`}>
+            <ul className={`${styles.list}  space-y-2 tracking-wide mt-1`}>
               <li class="min-w-max">
                 <Link
                   to="/admin/"
                   aria-label="dashboard"
-                  class="relative flex items-center space-x-4 rounded-md bg-gradient-to-r from-white-600 to-white-400 px-4 py-3 "
+                  class="relative flex items-center space-x-4  bg-gradient-to-r from-white-600 to-white-400 px-4 py-1 ml-1 "
                 >
                   <WindowIcon />
-                  <span class="title">Dashboard</span>
+                  <span className={styles.title}>Dashboard</span>
                 </Link>
               </li>
               <li class="min-w-max">
                 <Link
                   to="/admin/manageProduct"
-                  class="bg group flex items-center space-x-4 rounded-md px-4 py-3 bg-gradient-to-r  "
+                  class="bg group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r  "
                 >
                   <ProductionQuantityLimitsIcon />
-                  <span class="title">Product</span>
+                  <span className={styles.title}>Product</span>
                 </Link>
               </li>
               <li class="min-w-max">
                 <Link
                   to="/admin/manageCategory"
-                  class="group flex items-center space-x-4 rounded-md px-4 py-3 bg-gradient-to-r "
+                  class="group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r "
                 >
                   <CategoryIcon />
-                  <span class="title">Category</span>
+                  <span className={styles.title}>Category</span>
                 </Link>
               </li>
               <li class="min-w-max">
                 <Link
-                  to="/admin/addProduct"
-                  class="group flex items-center space-x-4 rounded-md px-4 py-3"
-                >
+                  to="/admin/user"
+                  class="group flex items-center space-x-4  px-4 py-1 ml-1"
+                > 
                   <DriveFolderUploadIcon />
-                  <span class="title">Data user</span>
+                  <span className={styles.title}>Data user</span>
                 </Link>
               </li>
               <li class="min-w-max">
                 <Link
                   to="/admin/addCategory"
-                  class="group flex items-center space-x-4 rounded-md px-4 py-3"
+                  class="group flex items-center space-x-4  px-4 py-1 ml-1"
                 >
                   <TrendingUpIcon />
-                  <span class="title">Statistics</span>
+                  <span className={styles.title}>Statistics</span>
                 </Link>
               </li>
             </ul>
@@ -79,7 +77,7 @@ const SideBar = () => {
             <DarkMode />
             <Link
               to=""
-              class="group flex items-center space-x-4 rounded-md px-4 py-3"
+              class="group flex items-center space-x-4  px-4 py-1 ml-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

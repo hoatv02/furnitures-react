@@ -1,10 +1,11 @@
 .addProduct input{
     border-radius:2px;
-    border: none;
+    border: 1px solid #ccc;
+    outline-offset: 0;
 }
 .addProduct select{
     height: 38px;
-    border: none;
+    border: 1px solid #ccc;
 }
 .addProduct textarea{
     border-radius: 2px;
@@ -28,3 +29,7 @@
 .btnAdd{
     margin-left:0;
 }
+
+
+
+

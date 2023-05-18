@@ -1,4 +1,4 @@
-import { IconButton, Pagination } from "@mui/material";
+import { Button, IconButton, Pagination } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useProductStore } from "../../../Store/Product";
@@ -14,15 +14,24 @@ const ManageProduct = () => {
   useEffect(() => {
     setProducts(products);
   }, []);
-  const {id} = useParams()
+  const { id } = useParams()
   const removeItem = async (id) => {
     const { data } = await axios.delete(`http://localhost:3000/product/${id}`);
-    setProducts(products.filter((item)=> item.id !== id))
+    setProducts(products.filter((item) => item.id !== id))
   };
   return (
     <div>
       <div className={`${styles.container} overflow-x-auto`}>
-        <h1 class="text-3xl py-3 ">Quản lý sản phẩm</h1>
+        <div className='flex w-full justify-between items-center'>
+          <div><h1 class="text-3xl py-3 ">Quản lý sản phẩm</h1></div>
+          <div>
+            <Link to='/admin/addProduct'>
+              <Button variant="contained" color="success">
+                Thêm mới
+              </Button>
+            </Link>
+          </div>
+        </div>
         <div class="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
           <div class="w-full ">
             <div class=" shadow-md rounded">
@@ -126,7 +135,7 @@ const ManageProduct = () => {
           </div>
         </div>
       </div>
-          <Pagination/>
+      <Pagination />
     </div>
   );
 };

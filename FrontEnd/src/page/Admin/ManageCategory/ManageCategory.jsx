@@ -31,9 +31,9 @@ const ManageCategory = () => {
   //   }
   // };
   return (
-    <div>
+    <div className={styles.containerCategory}>
       <div className={`${styles.container} overflow-x-auto`}>
-        <h1 class="text-3xl py-3 font-bold text-uppercase">Manage Product</h1>
+        <h1 class="text-3xl py-3 font-bold text-uppercase">Manage Category</h1>
         <div class="min-w-screen   flex items-center justify-center  font-sans overflow-hidden">
           <div class="w-full ">
             <div class=" shadow-md rounded">
@@ -73,7 +73,7 @@ const ManageCategory = () => {
                                 <ul class="inline-flex ">
                                   <li
                                     class="  rounded-full"
-                                    // onClick={() => removeItem(item._id)}
+                                  // onClick={() => removeItem(item._id)}
                                   >
                                     <IconButton aria-label="Example">
                                       <DeleteIcon className={styles.Icon} />
@@ -102,7 +102,9 @@ const ManageCategory = () => {
           </div>
         </div>
       </div>
-      <Pagination count={10} color="primary" className={styles.pagination} />
+      <div>
+        <Pagination count={10} color="primary" className={styles.pagination} />
+      </div>
     </div>
   );
 };

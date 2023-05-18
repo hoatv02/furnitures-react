@@ -176,7 +176,7 @@ export default function TopSection() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <MailIcon className={styles.icon}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -185,7 +185,7 @@ export default function TopSection() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <NotificationsIcon  className={styles.icon}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -200,7 +200,7 @@ export default function TopSection() {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}  className={styles.icon}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -208,8 +208,9 @@ export default function TopSection() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
+              
             >
-              <MoreIcon />
+              <MoreIcon/>
             </IconButton>
           </Box>
         </Toolbar>
