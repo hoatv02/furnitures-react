@@ -45,51 +45,51 @@ const AddProduct = () => {
   }, []);
   return (
     <div className={styles.addProduct}>
-      <h1 class="text-3xl py-3 font-bold">Thêm mới sản phẩm</h1>
-      <form class="gap-10 max-w-full grid grid-cols-2" onSubmit={handleSubmit(onSubmit)}>
-        <div class=''>
-          <div class="">
-            <label for="productName" class="form-label">
+      <h1 className="text-3xl py-3 font-bold">Thêm mới sản phẩm</h1>
+      <form className="gap-10 max-w-full grid grid-cols-2" onSubmit={handleSubmit(onSubmit)}>
+        <div className=''>
+          <div className="">
+            <label for="productName" className="form-label">
               Tên sản phẩm
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="productName"
               {...register("productName")}
             />
           </div>
-          <div class="">
-            <label for="price" class="form-label">
+          <div className="">
+            <label for="price" className="form-label">
               Giá sản phẩm
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="price"
               {...register("price")}
             />
           </div>
 
-          <div class="">
-            <label for="quanity" class="form-label">
+          <div className="">
+            <label for="quanity" className="form-label">
               Số lượng
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="quanity"
               {...register("quantity")}
             />
           </div>
 
-          <div class="">
-            <label for="category" class="form-label">
+          <div className="">
+            <label for="category" className="form-label">
               Danh mục sản phẩm
             </label>
             <select
               id="category"
-              class="form-select rounded-sm "
+              className="form-select rounded-sm "
               {...register("category")}
             >
               <option>Bàn ghế hiện đại loại 1</option>
@@ -97,18 +97,18 @@ const AddProduct = () => {
               <option>Bàn ghế hiện đại loại 3</option>
             </select>
           </div>
-          <div class="">
+          <div className="">
             <button className={`${styles.btnAdd} btn btn-danger mt-3  text-white-500`}>Thêm mới sản phẩm</button>
           </div>
         </div>
-        <div class=''>
-          <label for="image" class="form-label">
+        <div className=''>
+          <label for="image" className="form-label">
             Hình Ảnh
           </label>
-          <div class="">
-            <div class='file file--upload'>
+          <div className="">
+            <div className='file file--upload'>
               <label for='image'>
-                <i class="fa-solid fa-cloud-arrow-up"> Upload</i>
+                <i className="fa-solid fa-cloud-arrow-up"> Upload</i>
               </label>
               <input id="image" type='file'
                 multiple
@@ -117,7 +117,7 @@ const AddProduct = () => {
             {/* 
             <input
               type="file"
-              class="form-control p-2 mx-1"
+              className="form-control p-2 mx-1"
               id="image"
               multiple
               placeholder="1234 Main St"
@@ -141,13 +141,13 @@ const AddProduct = () => {
           </div>
 
           {/* <img src={files} alt="" /> */}
-          <div class="">
-            <label for="description" class="form-label">
+          <div className="">
+            <label for="description" className="form-label">
               Mô tả sản phẩm
             </label>
             <textarea
               type="text"
-              class="form-control"
+              className="form-control"
               id="description"
               {...register("description")}
             />

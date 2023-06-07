@@ -37,8 +37,8 @@ function CheckOutProducts() {
   return (
     <div className={styles.container}>
       
-      <div class="col-span-2 py-2 px-5">
-        <h1 class="text-xl font-medium ">Giỏ hàng của bạn !</h1>
+      <div className="col-span-2 py-2 px-5">
+        <h1 className="text-xl font-medium ">Giỏ hàng của bạn !</h1>
         <div
         className={`${styles.header} inline-flex w-full flex justify-between py-3`}
       >
@@ -57,33 +57,33 @@ function CheckOutProducts() {
           </h4>
         </div>
       </div>
-        <div class="flex justify-between items-center mt-6 pt-6">
-          <div class="flex  items-center">
+        <div className="flex justify-between items-center mt-6 pt-6">
+          <div className="flex  items-center">
             <img
               src="https://i.imgur.com/EEguU02.jpg"
               width="60"
-              class="rounded-full "
+              className="rounded-full "
             />
 
-            <div class="flex flex-col ml-3">
-              <span class="md:text-md font-medium">Chicken momo</span>
-              <span class="text-xs font-light text-gray-400">#41551</span>
+            <div className="flex flex-col ml-3">
+              <span className="md:text-md font-medium">Chicken momo</span>
+              <span className="text-xs font-light text-gray-400">#41551</span>
             </div>
           </div>
 
-          <div class="flex justify-center items-center">
-            <div class="pr-8 flex ">
-              <span class="font-semibold">-</span>
+          <div className="flex justify-center items-center">
+            <div className="pr-8 flex ">
+              <span className="font-semibold">-</span>
               <input
                 type="text"
-                class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
+                className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                 value="1"
               />
-              <span class="font-semibold">+</span>
+              <span className="font-semibold">+</span>
             </div>
 
-            <div class="pr-8 ">
-              <span class="text-xs font-medium">$10.50</span>
+            <div className="pr-8 ">
+              <span className="text-xs font-medium">$10.50</span>
             </div>
             <div>
               <DeleteIcon/>
@@ -91,35 +91,35 @@ function CheckOutProducts() {
           </div>
         </div>
 
-        <div class="flex justify-between items-center pt-6 mt-6 border-t">
-          <div class="flex  items-center">
+        <div className="flex justify-between items-center pt-6 mt-6 border-t">
+          <div className="flex  items-center">
             <img
               src="https://i.imgur.com/Uv2Yqzo.jpg"
               width="60"
-              class="rounded-full "
+              className="rounded-full "
             />
 
-            <div class="flex flex-col ml-3 ">
-              <span class="text-md font-medium w-auto">
+            <div className="flex flex-col ml-3 ">
+              <span className="text-md font-medium w-auto">
                 Spicy Mexican potatoes
               </span>
-              <span class="text-xs font-light text-gray-400">#66999</span>
+              <span className="text-xs font-light text-gray-400">#66999</span>
             </div>
           </div>
 
-          <div class="flex justify-center items-center">
-            <div class="pr-8 flex">
-              <span class="font-semibold">-</span>
+          <div className="flex justify-center items-center">
+            <div className="pr-8 flex">
+              <span className="font-semibold">-</span>
               <input
                 type="text"
-                class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
+                className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                 value="1"
               />
-              <span class="font-semibold">+</span>
+              <span className="font-semibold">+</span>
             </div>
 
-            <div class="pr-8">
-              <span class="text-xs font-medium">$10.50</span>
+            <div className="pr-8">
+              <span className="text-xs font-medium">$10.50</span>
             </div>
             <div>
               <DeleteIcon/>
@@ -127,33 +127,33 @@ function CheckOutProducts() {
           </div>
         </div>
 
-        <div class="flex justify-between items-center mt-6 pt-6 border-t">
-          <div class="flex  items-center">
+        <div className="flex justify-between items-center mt-6 pt-6 border-t">
+          <div className="flex  items-center">
             <img
               src="https://i.imgur.com/xbTAITF.jpg"
               width="60"
-              class="rounded-full "
+              className="rounded-full "
             />
 
-            <div class="flex flex-col ml-3 ">
-              <span class="text-md font-medium">Breakfast</span>
-              <span class="text-xs font-light text-gray-400">#86577</span>
+            <div className="flex flex-col ml-3 ">
+              <span className="text-md font-medium">Breakfast</span>
+              <span className="text-xs font-light text-gray-400">#86577</span>
             </div>
           </div>
 
-          <div class="flex justify-center items-center">
-            <div class="pr-8 flex">
-              <span class="font-semibold">-</span>
+          <div className="flex justify-center items-center">
+            <div className="pr-8 flex">
+              <span className="font-semibold">-</span>
               <input
                 type="text"
-                class="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
+                className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                 value="1"
               />
-              <span class="font-semibold">+</span>
+              <span className="font-semibold">+</span>
             </div>
 
-            <div class="pr-8">
-              <span class="text-xs font-medium">$10.50</span>
+            <div className="pr-8">
+              <span className="text-xs font-medium">$10.50</span>
             </div>
             <div>
               <DeleteIcon/>
@@ -161,17 +161,17 @@ function CheckOutProducts() {
           </div>
         </div>
 
-        <div class="flex justify-between items-center mt-6 pt-6 border-t">
-          <div class="flex items-center">
-            <span class="text-md  font-medium text-blue-500">
+        <div className="flex justify-between items-center mt-6 pt-6 border-t">
+          <div className="flex items-center">
+            <span className="text-md  font-medium text-blue-500">
             </span>
           </div>
 
-          <div class="flex justify-center items-end">
-            <span class="text-sm font-medium text-gray-400 mr-1">
+          <div className="flex justify-center items-end">
+            <span className="text-sm font-medium text-gray-400 mr-1">
               Subtotal:
             </span>
-            <span class="text-lg font-bold text-gray-800 "> $24.90</span>
+            <span className="text-lg font-bold text-gray-800 "> $24.90</span>
           </div>
         </div>
       </div>

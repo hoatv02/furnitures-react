@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import styles from './Profile.module.css'
 const Profile = () => {
   // const [user,setUser] = useState<User>()
-  const getInfo= localStorage.getItem("AccessToken");
-  const getInfoUser = JSON.parse(getInfo);
-  console.log(getInfoUser.data)
+  // const getInfo= localStorage.getItem("AccessToken");
+  // const getInfoUser = JSON.parse(getInfo);
+  // console.log(getInfoUser.data)
   return (
     <div>
       <div className={styles.profile_container}>
@@ -35,10 +35,10 @@ const Profile = () => {
         <div className="col-lg-4">
           <h5>DETAIL</h5>
           <br></br>
-          <h6>Name : {getInfoUser.data.userName}</h6><br></br>
-          <h6>Phone : {getInfoUser.data.phoneNumber} </h6><br></br>
-          <h6>Email : {getInfoUser.data.email}</h6><br></br>
-          <h6>Address : {getInfoUser.data.address}</h6>
+          {/* <h6>Name : {getInfoUser.data.userName}</h6><br></br> */}
+          {/* <h6>Phone : {getInfoUser.data.phoneNumber} </h6><br></br> */}
+          {/* <h6>Email : {getInfoUser.data.email}</h6><br></br> */}
+          {/* <h6>Address : {getInfoUser.data.address}</h6> */}
         </div>
       </div>
     </div>

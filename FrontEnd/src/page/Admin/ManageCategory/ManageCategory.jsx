@@ -1,20 +1,20 @@
-import { IconButton, Pagination } from "@mui/material";
+import { Button, IconButton, Pagination } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useProductStore } from "../../../Store/Product";
-import styles from "./ManageCategory.module.css";
+import styles from "../ManageProduct/ManageProduct.module.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
 import { Link, useParams } from "react-router-dom";
 import { useCategoryStore } from "../../../Store/Category";
 const ManageCategory = () => {
-  const [show, setShow] = useState(false);
-  const setCategorys = useCategoryStore((state) => state.setCategorys);
-  const categorys = useCategoryStore((state) => state.categorys);
-  useEffect(() => {
-    setCategorys();
-  }, []);
+  // const [show, setShow] = useState(false);
+  // const setCategorys = useCategoryStore((state) => state.setCategorys);
+  // const categorys = useCategoryStore((state) => state.categorys);
+  // useEffect(() => {
+  //   setCategorys();
+  // }, []);
   // const {id} = useParams()
   // const removeItem = async (id) => {
   //   try {
@@ -31,81 +31,60 @@ const ManageCategory = () => {
   //   }
   // };
   return (
-    <div className={styles.containerCategory}>
-      <div className={`${styles.container} overflow-x-auto`}>
-        <h1 class="text-3xl py-3 font-bold text-uppercase">Manage Category</h1>
-        <div class="min-w-screen   flex items-center justify-center  font-sans overflow-hidden">
-          <div class="w-full ">
-            <div class=" shadow-md rounded">
-              <table class="min-w-max w-full table-auto">
-                <thead>
-                  <tr class="  opacity-100  uppercase text-sm leading-normal">
-                    <th class="py-3 px-3 text-left">STT</th>
-                    <th class="py-3 px-3 text-left">Category Name</th>
-                    <th class="py-3 px-3 text-center">Actions</th>
-                  </tr>
-                </thead>
-                <tbody class=" text-sm font-light">
-                  {categorys.map((item, index) => {
-                    return (
-                      <tr class="border-b  " key={index}>
-                        <td class=" px-3 text-left whitespace-nowrap">
-                          <div class="flex items-center">
-                            <span class="font-medium">{index + 1}</span>
+    <div className="">
+    <div className={`${styles.container} overflow-x-auto pl-2`}>
+      <div className='flex w-full justify-between items-center border-b mb-2 '>
+        <div className=" items-center justify-center py-2">
+          <div><h1 className="text-3xl  ">Category</h1></div>
+        </div>
+        <div>
+          <Link to='/admin/addCategory'>
+            <Button variant="contained" color="success">
+              Thêm mới
+            </Button> 
+          </Link>
+        </div>
+      </div>
+      <div className="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
+        <div className="w-full ">
+          <div className="shadow-sm  text-xs">
+          {/* {
+              categorys.map((item, index) => {
+                return (
+                  <div className="border-b mb-1  pt-2 py-3 " key={index}>
+                    <div className="grid grid-cols-[1fr,2fr]">
+                      <div className="flex">
+                        <div className={styles.imageProduct}>
+                          <img src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/346809415_551325473744360_5475926670841503409_n.jpg?stp=dst-jpg_p843x403&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=v0csTF0M6OkAX8rTA3O&_nc_ht=scontent.fhan19-1.fna&oh=00_AfDcXaKK-kgzpWYh3H4Ei9dYxRtdMN8DBLRukAoSFFiB7w&oe=646B45BF" alt="" />
+                        </div>
+                        <div className=" ml-2">
+                          <div className="grid w-full ">
+                            <div className="uppercase"><strong>{item.categoryName}</strong></div>
                           </div>
-                        </td>
-                        <td class=" px-3 text-left whitespace-nowrap">
-                          <div class="flex items-center">
-                            <span class="font-medium">{item.categoryName}</span>
-                          </div>
-                        </td>
-
-                        <td class=" px-3 text-left">
-                          <div class="flex item-center justify-center">
-                            <IconButton
-                              aria-label="Example"
-                              onClick={() => setShow(!show)}
-                            >
-                              <MoreVertIcon />
-                            </IconButton>{" "}
-                            {show ? (
-                              <div>
-                                <ul class="inline-flex ">
-                                  <li
-                                    class="  rounded-full"
-                                  // onClick={() => removeItem(item._id)}
-                                  >
-                                    <IconButton aria-label="Example">
-                                      <DeleteIcon className={styles.Icon} />
-                                    </IconButton>
-                                  </li>
-                                  <Link to={`/admin/editCategory/${item._id}`}>
-                                    <li>
-                                      <IconButton aria-label="Example">
-                                        <ModeEditOutlineIcon
-                                          className={styles.Icon}
-                                        />
-                                      </IconButton>
-                                    </li>
-                                  </Link>
-                                </ul>
-                              </div>
-                            ) : null}
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                          <p>Gía : {item.price} VND</p>
+                          <p>Số lượng : {item.quantity}</p>
+                          <span className={styles.statusIcon}>Trạng thái : <span>{(item.quantity > 0) ? (<i className={`${styles.status} fa-solid fa-circle`} ></i>) : (<i className={`${styles.statusFire} fa-solid fa-circle`} ></i>)}</span> {(item.quantity > 0) ? " Còn hàng " : ' Hết hàng '}</span>
+                        </div>
+                      </div>
+                      <div className={styles.options}>
+                        <span><i className="fa-solid fa-cloud-arrow-down"></i></span>
+                        <span><i className="fa-solid fa-eye" ></i></span>
+                        <span><i className="fa-solid fa-trash"></i></span>
+                        <span><i className="fa-regular fa-pen-to-square"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            } */}
           </div>
         </div>
       </div>
-      <div>
-        <Pagination count={10} color="primary" className={styles.pagination} />
-      </div>
     </div>
+    <div>
+      <Pagination />
+    </div>
+  </div>
   );
 };
 

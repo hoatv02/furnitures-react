@@ -14,7 +14,7 @@ const Admin = () => {
         {" "}
         <SideBar />
       </div>
-      <div  className={`${styles.body} ${styles.containerLayout} `}>
+      <div className={`${styles.body} ${styles.containerLayout} `}>
         <div className={`${styles.body} `}>
           <TopSection />
 
@@ -23,6 +23,7 @@ const Admin = () => {
           </div>
         </div>
         <div>
+          
           <FooterSection />
         </div>
       </div>

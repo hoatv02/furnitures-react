@@ -11,10 +11,10 @@ import DarkMode from "../DarkMode/DarkMode";
 const SideBar = () => {
   return (
     <div className={`${styles.container} min-h-screen shadow-lg `}>
-      <div class="sidebar  h-full  overflow-hidden border-r  hover:bg-dark hover:shadow-lg">
-        <div class="flex h-full flex-col justify-between pt-2 pb-6">
+      <div className="sidebar  h-full  overflow-hidden border-r  hover:bg-dark hover:shadow-lg">
+        <div className="flex h-full flex-col justify-between pt-2 pb-6">
           <div>
-            <div class="w-max border-b-2 ">
+            <div className="w-max border-b-2 ">
               <Link to="/">
                 <img
                   src="https://ht21992.pythonanywhere.com/static/pages/images/logo.png"
@@ -24,47 +24,47 @@ const SideBar = () => {
               </Link>
             </div>
             <ul className={`${styles.list}  space-y-2 tracking-wide mt-1`}>
-              <li class="min-w-max">
+              <li className="min-w-max">
                 <Link
                   to="/admin/"
                   aria-label="dashboard"
-                  class="relative flex items-center space-x-4  bg-gradient-to-r from-white-600 to-white-400 px-4 py-1 ml-1 "
+                  className="relative flex items-center space-x-4  bg-gradient-to-r from-white-600 to-white-400 px-4 py-1 ml-1 "
                 >
                   <WindowIcon />
                   <span className={styles.title}>Dashboard</span>
                 </Link>
               </li>
-              <li class="min-w-max">
+              <li className="min-w-max">
                 <Link
                   to="/admin/manageProduct"
-                  class="bg group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r  "
+                  className="bg group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r  "
                 >
                   <ProductionQuantityLimitsIcon />
                   <span className={styles.title}>Product</span>
                 </Link>
               </li>
-              <li class="min-w-max">
+              <li className="min-w-max">
                 <Link
                   to="/admin/manageCategory"
-                  class="group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r "
+                  className="group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r "
                 >
                   <CategoryIcon />
                   <span className={styles.title}>Category</span>
                 </Link>
               </li>
-              <li class="min-w-max">
+              <li className="min-w-max">
                 <Link
                   to="/admin/user"
-                  class="group flex items-center space-x-4  px-4 py-1 ml-1"
+                  className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 > 
                   <DriveFolderUploadIcon />
                   <span className={styles.title}>Data user</span>
                 </Link>
               </li>
-              <li class="min-w-max">
+              <li className="min-w-max">
                 <Link
                   to="/admin/addCategory"
-                  class="group flex items-center space-x-4  px-4 py-1 ml-1"
+                  className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 >
                   <TrendingUpIcon />
                   <span className={styles.title}>Statistics</span>
@@ -73,25 +73,23 @@ const SideBar = () => {
             </ul>
           </div>
 
-          <div class="w-max -mb-3 ">
+          <div className="w-max -mb-3 ">
             <DarkMode />
             <Link
               to=""
-              class="group flex items-center space-x-4  px-4 py-1 ml-1"
+              className="group flex items-center space-x-4  px-4 py-1 ml-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 group-hover:fill-white-600"
+                className="h-5 w-5 group-hover:fill-white-600"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
                   d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                  clip-rule="evenodd"
                 />
               </svg>
-              <span class="titleSettings ml-5"> Settings</span>
+              <span className="titleSettings ml-5"> Settings</span>
             </Link>
           </div>
         </div>

@@ -1,9 +1,12 @@
 import React from 'react'
+import { Pagination } from '@mui/material'
 
-const Pagination = () => {
+const Paginations = () => {
   return (
-    <div>Pagination</div>
+    <>
+      <Pagination count={10} />
+    </>
   )
 }
 
-export default Pagination
+export default Paginations
