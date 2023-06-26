@@ -16,7 +16,7 @@ const ManageProduct = () => {
   }, []);
   const {id} = useParams()
   const removeItem = async (id) => {
-    const { data } = await axios.delete(`http://localhost:3000/product/${id}`);
+    const { data } = await axios.delete(`http://localhost:8000/product/${id}`);
     setProducts(products.filter((item)=> item.id !== id))
   };
   return (
@@ -74,7 +74,7 @@ const ManageProduct = () => {
                         <td class=" text-left">
                           <div class="flex items-center justify-center">
                             <img
-                              src={`http://localhost:3000/image/${item.image}`}
+                              src={`http://localhost:8000/image/${item.image}`}
                               class="w-10 h-10 rounded-full border-gray-200 border transform hover:scale-125"
                             />
                           </div>

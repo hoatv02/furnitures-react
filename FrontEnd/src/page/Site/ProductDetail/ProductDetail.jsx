@@ -17,7 +17,7 @@ const ProductDetail = () => {
           <div class="mx-auto mt-6 mb-8 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
             <div class="aspect-w-2 aspect-h-1  overflow-hidden rounded-lg lg:block m-1">
               <img
-                src={`http://localhost:3000/image/${products.image}`}
+                src={`http://localhost:8000/image/${products.image}`}
                 alt="Two each of gray, white, and black shirts laying flat."
                 class="h-full w-full object-cover object-center"
               />
@@ -25,14 +25,14 @@ const ProductDetail = () => {
             <div class=" lg:grid lg:grid-cols-1 lg:gap-y-8 ">
               <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src={`http://localhost:3000/image/${products.image}`}
+                  src={`http://localhost:8000/image/${products.image}`}
                   alt="Model wearing plain black basic tee."
                   class="h-full w-full object-cover object-center"
                 />
               </div>
               <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src={`http://localhost:3000/image/${products.image}`}
+                  src={`http://localhost:8000/image/${products.image}`}
                   alt="Model wearing plain gray basic tee."
                   class="h-full w-full object-cover object-center"
                 />

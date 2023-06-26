@@ -2,10 +2,9 @@
   =Default css to make the demo more pretty
 -------------------------------------------- */
 .container{
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
-  overflow-y: scroll;
+  margin:0 auto;
+  /* padding: 20px; */
+  /* overflow-y: scroll; */
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   /* color: #777; */
@@ -16,7 +15,7 @@
 }
   .content {
     padding: 15px;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* background-color: #e7e7e7; */
     /* background-color: rgba(0, 0, 0, 0.06); */
   }

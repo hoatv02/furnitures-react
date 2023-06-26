@@ -20,10 +20,10 @@ const AddProduct = () => {
       const fileName = product.image[0].name;
       formData.append("name", fileName);
       formData.append("image", product.image[0]);
-      await axios.post(`http://localhost:3000/uploadFile`, formData);
+      await axios.post(`http://localhost:8000/uploadFile`, formData);
       product.image = product.image[0].name;
       const { data } = await axios.post(
-        `http://localhost:3000/product`,
+        `http://localhost:8000/product`,
         product
       );
       // console.log("data", data);

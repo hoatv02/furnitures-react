@@ -14,7 +14,7 @@ const AddCategory = () => {
     }= useForm()
     const onSubmit = async (category) => {
       try {
-        const {data} = await axios.post(`http://localhost:3000/category`,category)
+        const {data} = await axios.post(`http://localhost:8000/category`,category)
         console.log('data',data)
         navigate('/admin/manageCategory')
       } catch (error) {

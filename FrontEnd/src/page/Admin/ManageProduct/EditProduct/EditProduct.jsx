@@ -25,7 +25,7 @@ const EditProduct = () => {
   const onSubmit = async (product) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/product/${id}`,
+        `http://localhost:8000/product/${id}`,
         product
       );
       console.log("data", data);

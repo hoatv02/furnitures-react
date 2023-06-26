@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import Loading from "../../../component/Site/Loading/Loading";
-import ModalSuccessFull from "../../../component/Site/ModalSuccessFull/ModalSuccessFull";
+import Modal from "../../../component/Site/Modal/Modal";
 const Registers = () => {
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
@@ -19,19 +19,17 @@ const Registers = () => {
   } = useForm();
   const onSubmit = async (user) => {
     try {
+      const { data } = await axios.post(`http://localhost:8000/signup`, user);
       setLoading(true);
-      const { data } = await axios.post(`http://localhost:3000/signup`, user);
-      setLoading(false);
-      setModal(true);
-      // navigate("/signin");
+      setModal("Đăng kí tài khoản Thành công");
     } catch (error) {
-      setLoading(false);
+      setModal("Đăng kí tài khoản Thất bại");
     }
+    setLoading(false);
   };
-
   const removeModal = () => {
     setModal(false);
-    // navigate("/signin");
+    navigate("/register");
   };
   return (
     <>
@@ -104,14 +102,13 @@ const Registers = () => {
                 </li>
                 <li>
                   <GoogleIcon />
-                  
                 </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {modal && <ModalSuccessFull removeModal={removeModal} />}
+        {modal && <Modal removeModal={removeModal} modal={modal} />}
       </div>
     </>
   );

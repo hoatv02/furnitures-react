@@ -159,7 +159,7 @@ export default function HeaderPage() {
                 }
                 {
                   isLogin ? <Profile /> :(
-                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 cursor-pointer">
                   <Link
                     to="/signin"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"

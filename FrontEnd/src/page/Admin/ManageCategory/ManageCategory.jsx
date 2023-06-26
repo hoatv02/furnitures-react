@@ -15,21 +15,21 @@ const ManageCategory = () => {
   useEffect(() => {
     setCategorys();
   }, []);
-  // const {id} = useParams()
-  // const removeItem = async (id) => {
-  //   try {
-  //     let confirmItem = confirm("Bạn chắc chắn muốn xóa danh mục này ?");
-  //     if (confirmItem == true) {
-  //       const { data } = await axios.delete(
-  //         `http://localhost:3000/category/${id}`
-  //       );
-  //       console.log(data);
-  //       console.log(setCategorys(categorys.filter((item) => item.id !== id)));
-  //     }
-  //   } catch (error) {
-  //     return;
-  //   }
-  // };
+  const {id} = useParams()
+  const removeItem = async (id) => {
+    try {
+      // let confirmItem = confirm("Bạn chắc chắn muốn xóa danh mục này ?");
+      // if (confirmItem == true) {
+        const { data } = await axios.delete(
+          `http://localhost:8000/category/${id}`
+        );
+        console.log(data);
+        console.log(setCategorys(categorys.filter((item) => item.id !== id)));
+      // }
+    } catch (error) {
+      return;
+    }
+  };
   return (
     <div>
       <div className={`${styles.container} overflow-x-auto`}>

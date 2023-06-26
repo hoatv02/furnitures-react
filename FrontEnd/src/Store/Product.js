@@ -1,6 +1,6 @@
 import axios from 'axios'
 import create from 'zustand'
-const urlBase = 'http://localhost:3000/'
+const urlBase = 'http://localhost:8000/'
 export const useProductStore = create((set) => ({
   url:urlBase,
   products: [],

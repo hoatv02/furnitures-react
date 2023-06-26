@@ -16,7 +16,7 @@ const EditCategory = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/category/${id}`
+          `http://localhost:8000/category/${id}`
         );
         reset(data.data);
       } catch (error) {}
@@ -26,7 +26,7 @@ const EditCategory = () => {
   const onSubmit = async (category) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/category/${id}`,
+        `http://localhost:8000/category/${id}`,
         category
       );
       console.log("data", data);
