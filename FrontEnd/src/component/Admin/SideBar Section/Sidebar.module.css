@@ -1,24 +1,40 @@
 .container {
-    background: #212529;
-    color: rgb(255, 255, 255) !important;
+    /* background: #212529; */
+    color: rgb(14, 13, 13) !important;
     box-shadow: 1px 1px 2px 1px;
+    height: 100%;
 }
 
 .container:hover {
     transition: .2s;
     transition-delay: 4s;
 }
+.title{
+    font-size: 14px;
+}
+.list li span{
+    margin-left: 30px !important;
 
+}
 .list li a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
+    border-radius: none !important;
+    -webkit-border-radius: none !important;
+    -moz-border-radius: none !important;
+    -ms-border-radius: none !important;
+    -o-border-radius: none !important;
 }
 
 .list li a:hover {
     color: rgb(0, 0, 0);
-    background-color: rgb(251, 251, 251);
-    border-radius: 10px;
+    background-color: rgb(210, 207, 207);
     transition: .5s ease;
+    border-radius: none !important;
+    -webkit-border-radius: none !important;
+    -moz-border-radius: none !important;
+    -ms-border-radius: none !important;
+    -o-border-radius: none !important;
 }
 .sideBarImg{
     margin-left: 15px;

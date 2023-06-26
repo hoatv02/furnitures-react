@@ -1,4 +1,4 @@
-import { IconButton, Pagination } from "@mui/material";
+import { Button, IconButton, Pagination } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useProductStore } from "../../../Store/Product";
@@ -20,31 +20,33 @@ const ManageProduct = () => {
     setProducts(products.filter((item)=> item.id !== id))
   };
   return (
-    <div>
-      <div className={`${styles.container} overflow-x-auto`}>
-        <h1 class="text-3xl py-3 ">Quản lý sản phẩm</h1>
-        <div class="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
-          <div class="w-full ">
-            <div class=" shadow-md rounded">
-              <table class="min-w-max w-full table-auto">
-                <thead>
-                  <tr class="  opacity-100  uppercase text-sm leading-normal">
-                    <th class="py-3 px-2 text-left">STT</th>
-                    <th class="py-3 px-3 text-left">Product Name</th>
-                    <th class="py-3 px-3 text-left">Price</th>
-                    <th class="py-3 px-3 text-left">Quantity</th>
-                    <th class="py-3 px-3 text-center">Image</th>
-                    <th class="py-3 px-3 text-left">Category</th>
-                    <th class="py-3 px-3 text-center">Actions</th>
-                  </tr>
-                </thead>
-                <tbody class=" text-sm font-light">
-                  {products.map((item, index) => {
-                    return (
-                      <tr class="border-b" key={index}>
-                        <td class=" px-3 text-left whitespace-nowrap">
-                          <div class="flex items-center">
-                            <span class="font-medium">{index + 1}</span>
+    <div className="">
+      <div className={`${styles.container} overflow-x-auto pl-2`}>
+        <div className='flex w-full justify-between items-center border-b mb-2 '>
+          <div className=" items-center justify-center py-2">
+            <div><h1 className="text-3xl  ">Product</h1>
+              <input type="text" onChange={(e)=>handleOnChange(e)}/>
+            </div>
+          </div>
+          <div>
+            <Link to='/admin/addProduct'>
+              <Button variant="contained" color="success">
+                Thêm mới
+              </Button>
+            </Link>
+          </div>
+        </div>
+        <div className="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
+          <div className="w-full ">
+            <div className="shadow-sm  text-xs">
+              {/* {
+                resultSearch.map((item, index) => {
+                  return (
+                    <div className="border-b mb-1  pt-2 py-3 " key={index}>Name
+                      <div className="grid grid-cols-[1fr,2fr]">
+                        <div className="flex">
+                          <div className={styles.imageProduct}>
+                            <img src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/346809415_551325473744360_5475926670841503409_n.jpg?stp=dst-jpg_p843x403&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=v0csTF0M6OkAX8rTA3O&_nc_ht=scontent.fhan19-1.fna&oh=00_AfDcXaKK-kgzpWYh3H4Ei9dYxRtdMN8DBLRukAoSFFiB7w&oe=646B45BF" alt="" />
                           </div>
                         </td>
                         <td class=" px-3 text-left whitespace-nowrap">
@@ -78,55 +80,25 @@ const ManageProduct = () => {
                               class="w-10 h-10 rounded-full border-gray-200 border transform hover:scale-125"
                             />
                           </div>
-                        </td>
-                        <td class=" px-3 text-left">
-                          <span class=" py-1  rounded-full text-xs">
-                            {item.category}
-                          </span>
-                        </td>
-                        <td class=" px-3 text-left">
-                          <div class="flex item-center justify-center">
-                            <IconButton
-                              aria-label="Example"
-                              onClick={() => setShow(!show)}
-                            >
-                              <MoreVertIcon />
-                            </IconButton>{" "}
-                            {show ? (
-                              <div>
-                                <ul class="inline-flex ">
-                                  <li
-                                    class="  rounded-full"
-                                    onClick={() => removeItem(item._id)}
-                                  >
-                                    <IconButton aria-label="Example">
-                                      <DeleteIcon className={styles.Icon} />
-                                    </IconButton>
-                                  </li>
-                                  <Link to={`/admin/editProduct/${item._id}`}>
-                                    <li>
-                                      <IconButton aria-label="Example">
-                                        <ModeEditOutlineIcon
-                                          className={styles.Icon}
-                                        />
-                                      </IconButton>
-                                    </li>
-                                  </Link>
-                                </ul>
-                              </div>
-                            ) : null}
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                        </div>
+                        <div className={styles.options}>
+                          <span><i className="fa-solid fa-cloud-arrow-down"></i></span>
+                          <span><i className="fa-solid fa-eye" ></i></span>
+                          <span><i className="fa-solid fa-trash"></i></span>
+                          <span><i className="fa-regular fa-pen-to-square"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })
+              } */}
             </div>
           </div>
         </div>
       </div>
-          <Pagination/>
+      <div>
+        <Pagination />
+      </div>
     </div>
   );
 };

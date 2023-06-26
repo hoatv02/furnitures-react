@@ -7,20 +7,25 @@ import FooterSection from "../../component/Admin/Body Section/Footer Section/Foo
 import { Pagination } from "@mui/material";
 
 const Admin = () => {
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
         {" "}
         <SideBar />
       </div>
-      <div className={`${styles.body} `}>
-        <TopSection />
+      <div className={`${styles.body} ${styles.containerLayout} `}>
+        <div className={`${styles.body} `}>
+          <TopSection />
 
-        <div className={`${styles.oulet}`}>
-          <Outlet />
+          <div className={`${styles.oulet}`}>
+            <Outlet />
+          </div>
         </div>
-        <FooterSection />
+        <div>
+          
+          <FooterSection />
+        </div>
       </div>
     </div>
   );

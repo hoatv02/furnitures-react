@@ -9,8 +9,13 @@
 
 .oulet{
     padding: 10px;
-    height:80vh;
+    height:auto;
 }
 .pagination{
     float: right;
+}
+.containerLayout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

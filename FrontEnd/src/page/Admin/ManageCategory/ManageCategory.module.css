@@ -5,3 +5,9 @@
 .quantity span{ 
     font-size: 0.5rem !important;
 }
+.containerCategory{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

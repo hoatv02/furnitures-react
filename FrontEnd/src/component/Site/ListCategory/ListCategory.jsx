@@ -15,22 +15,22 @@ import {
 } from "../../../Store/Category";
 import { useEffect } from "react";
 export default function ListCategory() {
-  const setCategoryName = useCategoryChangeStore(
-    (state) => state.setCategoryName
-  );
-  const setProducts = useProductStore((state) => state.setProducts);
-  const setCategorys = useCategoryStore((state) => state.setCategorys);
-  const categorys = useCategoryStore((state) => state.categorys);
+  // const setCategoryName = useCategoryChangeStore(
+  //   (state) => state.setCategoryName
+  // );
+  // const setProducts = useProductStore((state) => state.setProducts);
+  // const setCategorys = useCategoryStore((state) => state.setCategorys);
+  // const categorys = useCategoryStore((state) => state.categorys);
   const handleSearchs = (e) => {
     e.preventDefault();
     const valueInput = e.target.value;
-    setProducts(valueInput);
+    // setProducts(valueInput);
     // }
   };
 
-  useEffect(() => {
-    setCategorys();
-  }, []);
+  // useEffect(() => {
+  //   setCategorys();
+  // }, []);
   return (
     <Box component="nav" aria-label="My site" sx={{ flexGrow: 1 }}>
       <List role="menubar" row>
@@ -45,7 +45,7 @@ export default function ListCategory() {
             ALL
           </ListItemButton>
         </ListItem>
-        {categorys.map((item, index) => {
+        {/* {categorys.map((item, index) => {
           return (
             <ListItem role="none" key={index} sx={{mx:1}} onClick={()=>setCategoryName(item.categoryName)}>
               <ListItemButton
@@ -59,7 +59,7 @@ export default function ListCategory() {
               </ListItemButton>
             </ListItem>
           );
-        })}
+        })} */}
 
         <ListItem role="none" sx={{ marginInlineStart: "auto" }}>
           <div className={styles.searchInput}>

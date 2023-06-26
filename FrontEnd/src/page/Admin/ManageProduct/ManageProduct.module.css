@@ -1,7 +1,44 @@
-.Icon{
-    width:18px !important;
-    height:18px !important;
+.Icon {
+  width: 18px !important;
+  height: 18px !important;
 }
-.quantity span{ 
-    font-size: 0.5rem !important;
+.quantity span {
+  font-size: 0.5rem !important;
+}
+.statusIcon .status {
+  color: #14941d !important;
+}
+
+.statusIcon .statusFire {
+  color: #cc001f !important;
+}
+.options{
+}
+.options span {
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3px;
+}
+.options span:hover {
+  background-color: #8edbf5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+}
+.options span i {
+  color: #0298ca;
+  /* margin-right: 8px; */
+}
+.imageProduct{
+    width: 50px;
+    height:65px;   
+}
+.imageProduct img{
+    width: 100%;
+    height: 100%;
 }

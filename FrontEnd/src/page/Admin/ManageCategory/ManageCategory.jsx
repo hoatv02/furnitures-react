@@ -1,8 +1,8 @@
-import { IconButton, Pagination } from "@mui/material";
+import { Button, IconButton, Pagination } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useProductStore } from "../../../Store/Product";
-import styles from "./ManageCategory.module.css";
+import styles from "../ManageProduct/ManageProduct.module.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
@@ -31,6 +31,7 @@ const ManageCategory = () => {
     }
   };
   return (
+    <div>
     <div>
       <div className={`${styles.container} overflow-x-auto`}>
         <h1 class="text-3xl py-3 font-bold text-uppercase">Manage Product</h1>
@@ -73,7 +74,6 @@ const ManageCategory = () => {
                                 <ul class="inline-flex ">
                                   <li
                                     class="  rounded-full"
-                                    // onClick={() => removeItem(item._id)}
                                   >
                                     <IconButton aria-label="Example">
                                       <DeleteIcon className={styles.Icon} />
@@ -83,8 +83,7 @@ const ManageCategory = () => {
                                     <li>
                                       <IconButton aria-label="Example">
                                         <ModeEditOutlineIcon
-                                          className={styles.Icon}
-                                        />
+                                          className={styles.Icon} />
                                       </IconButton>
                                     </li>
                                   </Link>
@@ -102,8 +101,11 @@ const ManageCategory = () => {
           </div>
         </div>
       </div>
-      <Pagination count={10} color="primary" className={styles.pagination} />
     </div>
+    <div>
+        <Pagination />
+      </div>
+  </div>
   );
 };
 
