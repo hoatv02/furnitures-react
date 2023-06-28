@@ -8,33 +8,24 @@ import Home from "@mui/icons-material/Home";
 import Person from "@mui/icons-material/Person";
 import styles from "./ListCategory.module.css";
 import axios from "axios";
-import { useProductStore } from "../../../Store/Product";
-import {
-  useCategoryChangeStore,
-  useCategoryStore,
-} from "../../../Store/Category";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sortCategorys } from "../../../Store/Redux/Slice/CategorySlice";
+import { useState } from "react";
+import {filterProduct, sortCategory } from "../../../Store/Redux/Slice/ProductSlice";
 export default function ListCategory() {
-  // const setCategoryName = useCategoryChangeStore(
-  //   (state) => state.setCategoryName
-  // );
-  // const setProducts = useProductStore((state) => state.setProducts);
-  // const setCategorys = useCategoryStore((state) => state.setCategorys);
-  // const categorys = useCategoryStore((state) => state.categorys);
-  const handleSearchs = (e) => {
-    e.preventDefault();
-    const valueInput = e.target.value;
-    // setProducts(valueInput);
-    // }
+  const categorys = useSelector((state)=>state.category.data)
+  const dispatch = useDispatch()
+  const handleSort = (data) => {
+    dispatch(sortCategory(data));
   };
-
-  // useEffect(() => {
-  //   setCategorys();
-  // }, []);
+  const handleSearchs = (data)=>{
+    dispatch(filterProduct(data.target.value))
+  }
   return (
     <Box component="nav" aria-label="My site" sx={{ flexGrow: 1 }}>
       <List role="menubar" row>
-        <ListItem role="none" >
+        <ListItem role="none">
           <ListItemButton
             role="menuitem"
             component="a"
@@ -45,9 +36,14 @@ export default function ListCategory() {
             ALL
           </ListItemButton>
         </ListItem>
-        {/* {categorys.map((item, index) => {
+        {categorys.map((item, index) => {
           return (
-            <ListItem role="none" key={index} sx={{mx:1}} onClick={()=>setCategoryName(item.categoryName)}>
+            <ListItem
+              role="none"
+              key={index}
+              sx={{ mx: 1 }}
+              onClick={() =>handleSort(item.categoryName)}
+            >
               <ListItemButton
                 role="menuitem"
                 component="a"
@@ -59,15 +55,16 @@ export default function ListCategory() {
               </ListItemButton>
             </ListItem>
           );
-        })} */}
+        })}
 
         <ListItem role="none" sx={{ marginInlineStart: "auto" }}>
           <div className={styles.searchInput}>
-            <form action="" onChange={handleSearchs}>
+            <form action="">
               <input
                 type="text"
                 placeholder="Search"
                 className={styles.search}
+                onChange={(e) => handleSearchs(e)}
               />
             </form>
           </div>

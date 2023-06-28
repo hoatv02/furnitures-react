@@ -55,7 +55,7 @@ function classNames(...classes) {
 
 export default function NavbarLeftHome() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
+  const [sort,setSort] = useState()
   return (
     <div className="bg-white">
       <div>

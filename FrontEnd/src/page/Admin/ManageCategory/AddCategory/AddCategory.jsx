@@ -29,17 +29,17 @@ const AddCategory = () => {
         <label for="CategoryID" className="form-label">
           CategoryID
         </label>
-        <input type="text" className="form-control rounded-lg" id="CategoryID"   disabled/>
+        <input type="text" className="form-control rounded-lg border-[#ff4584]" id="CategoryID"   disabled/>
       </div>
       
       <div className="col-md-8">
         <label for="categoryName" className="form-label">
           Category Name
         </label>
-        <input type="text" className="form-control rounded-lg" id="categoryName"  {...register("categoryName")}/>
+        <input type="text" className="form-control rounded-lg border-[#ff4584]" id="categoryName"  {...register("categoryName")}/>
       </div>
       <div className="col-12">
-        <button  className="btn btn-danger text-white-500">
+        <button  className="btn bg-[#ff4584] hover:bg-[#ee3371]  text-white-500">
           Thêm mới danh mục
         </button>
       </div>

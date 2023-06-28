@@ -11,6 +11,7 @@ import Registers from "../page/Site/Register/Register";
 import Profile from "../page/Site/Profile/Profile";
 import Cart from "../page/Site/MyCart/Cart";
 import CheckoutMyCart from "../page/Site/CheckoutMyCart/CheckoutMyCart";
+import PageError from "../component/Site/PageError/PageError";
 const LayoutSite = () => {
   return (
     <Routes>
@@ -27,6 +28,7 @@ const LayoutSite = () => {
       </Route>
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Registers />} />
+      <Route path="/*" element={<PageError />} />
     </Routes>
   );
 };

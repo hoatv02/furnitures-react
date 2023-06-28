@@ -5,17 +5,23 @@
 }
 .body{
     width: 100%;
+    box-shadow: none !important;
 }
 
 .oulet{
     padding: 10px;
+    box-shadow: none !important;
+
     height:auto;
 }
 .pagination{
+    box-shadow: none !important;
+
     float: right;
 }
 .containerLayout{
     display: flex;
     flex-direction: column;
+    box-shadow: none !important;
     justify-content: space-between;
 }

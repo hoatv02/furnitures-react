@@ -16,7 +16,7 @@
   cursor: pointer;
   outline: 0;
   user-select: none;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-color: #ff4584;
   border-style: solid;
   border-radius: 4px;
   border-width: 1px;
@@ -32,7 +32,7 @@
 }
 
 .file > label:hover {
-  border-color: hsl(0, 0%, 21%);
+  border-color: #ff4584;
 }
 
 .file > label:active {
@@ -45,11 +45,11 @@
 
 .file--upload > label {
   color: #ccc;
-  border-color: #ccc;
+  border-color: #ff4584;
 }
 
 .file--upload > label:hover {
-  border-color: #ccc;
+  border-color: #ff4584;
   color:rgb(50, 49, 49);
   background-color: #ccc;
 }

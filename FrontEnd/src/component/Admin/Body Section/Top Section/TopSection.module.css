@@ -13,7 +13,9 @@
 }
 .box{
     background:  #ffff;
+    box-shadow: none;
     color: rgb(255, 255, 255);
+    height: 66px;
 }
 .icon{
     color: #bdbcbc;

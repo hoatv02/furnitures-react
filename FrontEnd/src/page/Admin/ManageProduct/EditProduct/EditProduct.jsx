@@ -4,10 +4,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import '../AddProduct/Add.css'
 import { useNavigate, useNavigation, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 const EditProduct = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState([]);
   const [files, setFiles] = useState([]);
+  const categorys = useSelector((state)=>state.category.data)
+
   const {
     register,
     handleSubmit,
@@ -106,13 +109,17 @@ const EditProduct = () => {
               Danh mục sản phẩm
             </label>
             <select
-              id="category"
+              id="categoryName"
               className="form-select rounded-sm "
-              {...register("category")}
+              {...register("categoryName")}
             >
-              <option>Bàn ghế hiện đại loại 1</option>
-              <option>Bàn ghế hiện đại loại 2</option>
-              <option>Bàn ghế hiện đại loại 3</option>
+               {
+              categorys.map((item,index)=>{
+                return (
+                  <option key={index}>{item.categoryName}</option>
+                )
+              })
+             }
             </select>
           </div>
           <div className="">

@@ -8,7 +8,6 @@ import ManageCategory from '../page/Admin/ManageCategory/ManageCategory';
 import AddProduct from '../page/Admin/ManageProduct/AddProduct/AddProduct';
 import EditProduct from '../page/Admin/ManageProduct/EditProduct/EditProduct';
 import ManageProduct from '../page/Admin/ManageProduct/ManageProduct';
-
 const LayoutAdmin = () => {
   return (
     <Routes>
@@ -22,9 +21,8 @@ const LayoutAdmin = () => {
 
        <Route path='/manageProduct' element={<ManageProduct/>}/>
        <Route path='/manageCategory' element={<ManageCategory/>}/>
-
-
       </Route>
+
       {/* <Route path="/signin" element={<p>ok</p>} /> */}
       {/* <Route path="/register" element={<p>ok</p>} /> */}
     </Routes>

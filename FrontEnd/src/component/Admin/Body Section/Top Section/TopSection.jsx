@@ -158,11 +158,10 @@ export default function TopSection() {
   );
 
   return (
-   <div className={`${styles.box} boxTop`}>
+   <div className={`${styles.box} boxTop `}>
      <Box sx={{flexGrow: 1}}>
       <AppBar position="static">
         <Toolbar className={styles.box}>
-          
           <Search className={styles.Search}>
             <SearchIconWrapper>
               <SearchIcon />

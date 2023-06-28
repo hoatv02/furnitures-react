@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useProductDetailStore } from "../../../Store/Product";
+// import { useProductDetailStore } from "../../../Store/Product";
 import styles from "./ProductDetail.module.css";
 const ProductDetail = () => {
   // const products = useProductDetailStore((state) => state.products);
@@ -17,7 +17,7 @@ const ProductDetail = () => {
           <div className="mx-auto mt-6 mb-8 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
             <div className="aspect-w-2 aspect-h-1  overflow-hidden rounded-lg lg:block m-1">
               <img
-                src={`http://localhost:8000/image/${products.image}`}
+                // src={`http://localhost:8000/image/${products.image}`}
                 alt="Two each of gray, white, and black shirts laying flat."
                 className="h-full w-full object-cover object-center"
               />
@@ -25,14 +25,14 @@ const ProductDetail = () => {
             <div className=" lg:grid lg:grid-cols-1 lg:gap-y-8 ">
               <div className="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src={`http://localhost:8000/image/${products.image}`}
+                  // src={`http://localhost:8000/image/${products.image}`}
                   alt="Model wearing plain black basic tee."
                   className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg m-1">
                 <img
-                  src={`http://localhost:8000/image/${products.image}`}
+                  // src={`http://localhost:8000/image/${products.image}`}
                   alt="Model wearing plain gray basic tee."
                   className="h-full w-full object-cover object-center"
                 />
