@@ -21,7 +21,7 @@ const AuthSchema  = mongoose.Schema({
         address : {
             // required: true,
             type: String,
-        }
+        },
 
 },{timetamps:true})
 

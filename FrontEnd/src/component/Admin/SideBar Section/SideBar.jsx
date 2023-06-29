@@ -54,7 +54,7 @@ const SideBar = () => {
               </li>
               <li className="min-w-max">
                 <Link
-                  to="/admin/user"
+                  to="/admin/manageUser"
                   className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 > 
                   <DriveFolderUploadIcon />

@@ -25,7 +25,7 @@ const Signin = () => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        window.location.href = '/'
+        navigate('/')
       }, 500);
     } catch (error) {}
   };
@@ -74,9 +74,9 @@ const Signin = () => {
                 </label>
               </div>
               <div className={styles.inputBox}>
-                <button name="" type="submit" onClick={Login}>
+                <a name="" className="border border-red-500" type="submit" onClick={Login}>
                   Sign in
-                </button>
+                </a>
               </div>
               <div className={styles.inputBox}>
                 <p>

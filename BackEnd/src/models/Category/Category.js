@@ -5,7 +5,7 @@ const CategorySchema = mongoose.Schema({
     },
     categoryName:{
         type:String,
-    }
+    },
 })
 
 export default mongoose.model('Category', CategorySchema)

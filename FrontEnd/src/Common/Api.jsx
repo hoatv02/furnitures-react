@@ -16,3 +16,12 @@ export const Categorys = createAsyncThunk('Categorys',async()=>{
    }
 })
 
+export const Users = createAsyncThunk('Users',async()=>{
+   try {
+      const data = await axios.get(`http://localhost:8000/user`)
+      return data.data.data
+   } catch (error) {
+      
+   }
+})
+

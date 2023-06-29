@@ -8,6 +8,8 @@ import ManageCategory from '../page/Admin/ManageCategory/ManageCategory';
 import AddProduct from '../page/Admin/ManageProduct/AddProduct/AddProduct';
 import EditProduct from '../page/Admin/ManageProduct/EditProduct/EditProduct';
 import ManageProduct from '../page/Admin/ManageProduct/ManageProduct';
+import AddUser from '../page/Admin/ManageUser/AddUser/AddUser';
+import ManageUser from '../page/Admin/ManageUser/ManageUser/ManageUser';
 const LayoutAdmin = () => {
   return (
     <Routes>
@@ -15,6 +17,9 @@ const LayoutAdmin = () => {
        <Route index element={<Dashboard/>}/>
        <Route path='/addProduct' element={<AddProduct/>}/>
        <Route path='/addCategory' element={<AddCategory/>}/>
+
+       <Route path='/addUser' element={<AddUser/>}/>
+       <Route path='/manageUser' element={<ManageUser/>}/>
 
        <Route path='/editProduct/:id' element={<EditProduct/>}/>
        <Route path='/editCategory/:id' element={<EditCategory/>}/>
