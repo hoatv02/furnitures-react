@@ -1,20 +1,20 @@
 /* eslint-disable no-unused-expressions */
 import { createSlice } from "@reduxjs/toolkit";
-import { Products } from "../../../Common/Api";
+import { ProductDetails, Products } from "../../../Common/Api";
 const ProductSlice = createSlice({
   name: "product",
   initialState: {
     isLoading: false,
     data: [],
     isError: false,
-    result:[]
+    result: [],
   },
   reducers: {
     sortCategory: (state, { payload }) => {
       const resultSortData = state.data.filter(
         (item) => item.category === payload
       );
-       state.result=resultSortData
+      state.result = resultSortData;
     },
     filterProduct: (state, { payload }) => {
       const resultSearch = state.data.filter((item) =>
@@ -32,6 +32,16 @@ const ProductSlice = createSlice({
         state.data = action.payload;
       }),
       builder.addCase(Products?.rejected, (state) => {
+        state.isError = true;
+      });
+    builder.addCase(ProductDetails?.pending, (state) => {
+      state.isLoading = true;
+    }),
+      builder.addCase(ProductDetails?.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = action.payload;
+      }),
+      builder.addCase(ProductDetails?.rejected, (state) => {
         state.isError = true;
       });
   },
