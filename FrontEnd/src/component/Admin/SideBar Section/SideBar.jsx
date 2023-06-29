@@ -31,7 +31,7 @@ const SideBar = () => {
                   className="relative flex items-center space-x-4  bg-gradient-to-r from-white-600 to-white-400 px-4 py-1 ml-1 "
                 >
                   <WindowIcon />
-                  <span className={styles.title}>Dashboard</span>
+                  <span className={styles.title}>Trang chủ</span>
                 </Link>
               </li>
               <li className="min-w-max">
@@ -40,7 +40,7 @@ const SideBar = () => {
                   className="bg group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r  "
                 >
                   <ProductionQuantityLimitsIcon />
-                  <span className={styles.title}>Product</span>
+                  <span className={styles.title}>Sản phẩm</span>
                 </Link>
               </li>
               <li className="min-w-max">
@@ -49,7 +49,7 @@ const SideBar = () => {
                   className="group flex items-center space-x-4  px-4 py-1 ml-1 bg-gradient-to-r "
                 >
                   <CategoryIcon />
-                  <span className={styles.title}>Category</span>
+                  <span className={styles.title}>Danh mục</span>
                 </Link>
               </li>
               <li className="min-w-max">
@@ -58,7 +58,7 @@ const SideBar = () => {
                   className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 > 
                   <DriveFolderUploadIcon />
-                  <span className={styles.title}>Data user</span>
+                  <span className={styles.title}>Người dùng</span>
                 </Link>
               </li>
               <li className="min-w-max">
@@ -67,7 +67,7 @@ const SideBar = () => {
                   className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 >
                   <TrendingUpIcon />
-                  <span className={styles.title}>Statistics</span>
+                  <span className={styles.title}>Biểu đồ thống kê</span>
                 </Link>
               </li>
             </ul>

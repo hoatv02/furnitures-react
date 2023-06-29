@@ -340,10 +340,7 @@ const ProductDetail = () => {
 
                 <div className="mt-4 space-y-6">
                   <p className="text-sm text-gray-600">
-                    The 6-Pack includes two black, two white, and two heather
-                    gray Basic Tees. Sign up for our subscription service and be
-                    the first to get new, exciting colors, like our upcoming
-                    &quot;Charcoal Gray&quot; limited release.
+                  Bàn ghế được làm từ chất liệu gỗ tự nhiên luôn là sản phẩm hút người dùng, và không bao giờ lỗi thời. Việc có mặt của một bộ bàn ghế phong khách hiện đại gỗ tự nhiên khẳng định đẳng cấp của gia chủ nói riêng và phong cách thiết kế nội thất phòng khách của người Việt nói chung.
                   </p>
                 </div>
               </div>

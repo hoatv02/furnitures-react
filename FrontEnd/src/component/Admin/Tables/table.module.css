@@ -75,9 +75,7 @@ html {
 }
 
 /* main */
-main {
-  /* margin-top: 1.4rem; */
-}
+
 
 main .insights {
   display: grid;
@@ -284,7 +282,6 @@ main table thead {
 /* search_table */
 .search_table{
   position:relative;
-  margin-top:1rem;
   margin-bottom:0.8rem;
   width:380px;
   height:30px;
@@ -407,8 +404,9 @@ main table thead {
 /* sort */
 
 .sort{
-  padding: var(--card-padding);
+  /* padding: var(--card-padding); */
   background: var(--color-white);
+  margin-bottom: 20px;
 }
 
 
@@ -424,7 +422,7 @@ main table thead {
 }
 
 .right .top button{
-    display:none;
+    /* display:none; */
 }
 
 .right .theme-toggler{

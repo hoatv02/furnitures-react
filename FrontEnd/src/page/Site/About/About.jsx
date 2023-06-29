@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./About.module.css";
 const About = () => {
-  const [isLogin] = useState(localStorage.getItem('AccessToken') != null)
+  const [isLogin] = useState(localStorage.getItem("AccessToken") != null);
 
   return (
     <div>
@@ -50,7 +50,7 @@ const About = () => {
                             href="www.tailus.io"
                             className="block w-max text-cyan-600"
                           >
-                            Read more
+                            Đọc thêm
                           </a>
                         </div>
                       </div>
@@ -60,7 +60,7 @@ const About = () => {
                         src="https://khobanghe.vn/wp-content/uploads/2017/09/bo-ban-an-ashley.png"
                         alt="art cover"
                         loading="lazy"
-                        width="1000" 
+                        width="1000"
                         height="667"
                         className="h-100 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl"
                       />
@@ -79,7 +79,7 @@ const About = () => {
                             href="www.tailus.io"
                             className="block w-max text-cyan-600"
                           >
-                            Read more
+                            Đọc thêm
                           </a>
                         </div>
                       </div>
@@ -87,40 +87,36 @@ const About = () => {
                   </div>
                 </div>
                 <div className="pt-16 mt-20 pb-0 bg-white">
-                    <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                      <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                        <div className="md:5/12 lg:w-5/12">
-                          <img
-                            src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
-                            alt="image"
-                            loading="lazy"
-                            width=""
-                            height=""
-                          />
-                        </div>
-                        <div className="md:7/12 lg:w-6/12">
-                          <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
-                            Nuxt development is carried out by passionate
-                            developers
-                          </h2>
-                          <p className="mt-6 text-gray-600">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Eum omnis voluptatem accusantium nemo
-                            perspiciatis delectus atque autem! Voluptatum
-                            tenetur beatae unde aperiam, repellat expedita
-                            consequatur! Officiis id consequatur atque
-                            doloremque!
-                          </p>
-                          <p className="mt-4 text-gray-600">
-                            {" "}
-                            Nobis minus voluptatibus pariatur dignissimos libero
-                            quaerat iure expedita at? Asperiores nemo possimus
-                            nesciunt dicta veniam aspernatur quam mollitia.
-                          </p>
-                        </div>
+                  <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                    <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                      <div className="md:5/12 lg:w-5/12">
+                        <img
+                          src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+                          alt="image"
+                          loading="lazy"
+                          width=""
+                          height=""
+                        />
+                      </div>
+                      <div className="md:7/12 lg:w-6/12">
+                        <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
+                          Tổng hợp các mẫu bộ bàn ghế phòng khách đẹp, hiện đại,
+                          thịnh hành 2023
+                        </h2>
+                        <p className="mt-6 text-gray-600">
+                          Bước đầu tiên để tạo ra không gian sống mơ ước chính
+                          là tìm được một mẫu nội thất hoàn hảo, phù hợp với
+                          thiết kế của căn nhà và sở thích của bạn. Để việc chọn
+                          lựa được dễ dàng hơn, Cleanipedia đã tổng hợp giúp bạn
+                          các mẫu bộ bàn ghế phòng khách đang thịnh hành nhất
+                          2023. Bạn có thể tùy chọn với rất nhiều kiểu dáng đa
+                          dạng, phong cách cổ điển hay sang trọng đều có đủ
+                          trong bài viết dưới đây.
+                        </p>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
               <section className="text-gray-600 body-font">
                 <span className="block w-max mx-auto px-3 py-1.5 border border-green-200 rounded-full bg-green-100 text-green-600">
@@ -210,7 +206,6 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                  
                 </div>
                 <div className="container px-5  mx-auto">
                   <div className="flex flex-wrap -m-4">
@@ -295,7 +290,6 @@ const About = () => {
                   </div>
                 </div>
               </section>
-              
             </div>
             <div
               className={`${styles.form_container} space-y-3 lg:w-1/5 lg:px-3 lg:space-y-4 shadow-md`}
@@ -303,7 +297,7 @@ const About = () => {
               <div className={`${styles.formComment}`}>
                 <form action="" className="p-2">
                   <h3 className="p-3 bg-gray-100 mt-2 mb-2 m-0 text-center">
-                    COMMENT
+                    Bình Luận
                   </h3>
                   <input
                     type="text"
@@ -323,19 +317,23 @@ const About = () => {
                     className="w-full rounded-md border"
                     placeholder="Message..."
                   ></textarea>
-                   {
-                    isLogin ? (
-                      <button className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md" disabled>
+                  {isLogin ? (
+                    <button
+                      className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md"
+                      disabled
+                    >
                       SEN MESSAGE
                     </button>
-                    ) : 
-                   <div>
-                   <button className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md">
-                  SEN MESSAGE
-                </button>
-                <p className='text-red-500 font-bold text-sm my-10'>Vui lòng đăng nhập để thực hiện chức năng này !</p>
-                 </div>
-                   }
+                  ) : (
+                    <div>
+                      <button className="p-2 w-full bg-gray-100 mt-2 mb-2 m-0 text-center shadow-md">
+                        SEN MESSAGE
+                      </button>
+                      <p className="text-red-500 font-bold text-sm my-10">
+                        Vui lòng đăng nhập để thực hiện chức năng này !
+                      </p>
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
