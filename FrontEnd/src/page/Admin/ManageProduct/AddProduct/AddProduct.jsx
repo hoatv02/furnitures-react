@@ -31,6 +31,7 @@ const AddProduct = () => {
         .then(() => {
           navigate("/admin/manageProduct");
         });
+        console.log(data)
     } catch (error) {}
   };
   const imagesWatch = watch(["image"]);

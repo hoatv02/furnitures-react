@@ -1,17 +1,10 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import List from "@mui/joy/List";
-import ListDivider from "@mui/joy/ListDivider";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
-import Home from "@mui/icons-material/Home";
-import Person from "@mui/icons-material/Person";
 import styles from "./ListCategory.module.css";
-import axios from "axios";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sortCategorys } from "../../../Store/Redux/Slice/CategorySlice";
-import { useState } from "react";
 import {filterProduct, sortCategory } from "../../../Store/Redux/Slice/ProductSlice";
 export default function ListCategory() {
   const categorys = useSelector((state)=>state.category.data)

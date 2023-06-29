@@ -4,17 +4,20 @@ import React, { useEffect, useState } from "react";
 import styles from "./ManageProduct.module.css";
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 const ManageProduct = () => {
   const [show, setShow] = useState(false);
   const product = useSelector((state) => state.product.data);
   const [resultSearch,setResultSearch] = useState(product)
   const { id } = useParams();
-  
+  const [loader,setLoader] = useState(false)
   const handleSearch = (e)=>{
     const a = e.target.value
     const result = product.filter((item)=>item.productName.toLowerCase().includes(a.toLowerCase()))
     setResultSearch(result)
   }
+
   return (
     <div className="">
       <div className={`${styles.container} overflow-x-auto pl-2 mb-10`}>
@@ -37,12 +40,12 @@ const ManageProduct = () => {
             </Link>
           </div>
         </div>
-        <div className="min-w-screen flex items-center justify-center  font-sans overflow-hidden">
+        <div className="min-w-screen flex items-center justify-center  font-sans overflow-hidden download">
           <div className="w-full ">
             <div className="shadow-sm  text-xs">
               {resultSearch.map((item, index) => {
                 return (
-                  <div className="border-b mb-1  pt-2 py-3 " key={index}>
+                  <div className="border-b mb-1  pt-2 py-3 abc" key={index}>
                     {/* Name */}
                     <div className="grid grid-cols-[1fr,2fr]">
                       <div className="flex">
@@ -52,7 +55,7 @@ const ManageProduct = () => {
                             alt=""
                           />
                         </div>
-                        <div className="grid grid-cols-2">
+                        <div className="grid ">
                           <div className="grid cols">
                             <div className=" px-3 text-left whitespace-nowrap">
                               <div className="flex items-center">
@@ -71,11 +74,15 @@ const ManageProduct = () => {
                             >
                               <span className=" py-1 rounded-full text-xs">
                                 Trạng thái :{" "}
-                                {item.quantity > 0 ? (
+                                {item.quantity > 100 ? (
                                   <span className="bg-green-500 px-1 py-1 text-xs rounded-full">
                                     Còn hàng
                                   </span>
-                                ) : (
+                                ) :(item.quantity < 100 && item.quantity > 0)?(
+                                  <span className="bg-[#f0e800] py-1 px-1 rounded-full">
+                                    Sắp hết
+                                  </span>
+                                ): (
                                   <span className="bg-red-500 py-1 px-1 rounded-full">
                                     Hết hàng
                                   </span>
@@ -97,7 +104,7 @@ const ManageProduct = () => {
                       </div>
                       <div className={styles.options}>
                         <span>
-                          <i className="fa-solid fa-cloud-arrow-down"></i>
+                          <i className="fa-solid fa-cloud-arrow-down" ></i>
                         </span>
                         <span>
                           <i className="fa-solid fa-eye"></i>

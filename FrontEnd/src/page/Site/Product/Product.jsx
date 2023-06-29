@@ -5,12 +5,12 @@ import styles from "./Product.module.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 export default function Product() {
-  const product = useSelector((state) => state.product.result);
+  const product = useSelector((state) => state.product.data);
   return (
     <div className={`${styles.container_product} bg-white`}>
       <div className="mx-auto max-w-2xl py-2 px-2 sm:py-24 sm:px-4 lg:max-w-full lg:px-2">
         <div className="py-2">
-          <ListCategory/>
+          <ListCategory />
         </div>
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-x-8">

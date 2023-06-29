@@ -15,7 +15,6 @@ const AddCategory = () => {
     const onSubmit = async (category) => {
       try {
         const {data} = await axios.post(`http://localhost:8000/category`,category)
-        console.log('data',data)
         navigate('/admin/manageCategory')
       } catch (error) {
       }
