@@ -21,7 +21,6 @@ export const Users = createAsyncThunk('Users',async()=>{
       const data = await axios.get(`http://localhost:8000/user`)
       return data.data.data
    } catch (error) {
-      
    }
 })
 
