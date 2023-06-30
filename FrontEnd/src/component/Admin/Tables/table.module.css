@@ -238,6 +238,7 @@ main .date .btn{
 /* recent orders */
 main .recent_orders {
   margin-top: 1rem;
+  height: 100%;
 }
 
 main .recent_orders h2 {

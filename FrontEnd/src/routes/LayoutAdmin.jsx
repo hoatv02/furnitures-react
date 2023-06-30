@@ -10,6 +10,7 @@ import EditProduct from '../page/Admin/ManageProduct/EditProduct/EditProduct';
 import ManageProduct from '../page/Admin/ManageProduct/ManageProduct';
 import AddUser from '../page/Admin/ManageUser/AddUser/AddUser';
 import ManageUser from '../page/Admin/ManageUser/ManageUser/ManageUser';
+import Statistical from '../page/Admin/Statistical/Statistical';
 const LayoutAdmin = () => {
   return (
     <Routes>
@@ -20,6 +21,8 @@ const LayoutAdmin = () => {
 
        <Route path='/addUser' element={<AddUser/>}/>
        <Route path='/manageUser' element={<ManageUser/>}/>
+
+       <Route path='/statistical' element={<Statistical/>}/>
 
        <Route path='/editProduct/:id' element={<EditProduct/>}/>
        <Route path='/editCategory/:id' element={<EditCategory/>}/>

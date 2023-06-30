@@ -7,6 +7,7 @@ import CategoryIcon from "@mui/icons-material/Category";
 import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import DarkMode from "../DarkMode/DarkMode";
+import Statistical from './../../../page/Admin/Statistical/Statistical';
 
 const SideBar = () => {
   return (
@@ -63,7 +64,7 @@ const SideBar = () => {
               </li>
               <li className="min-w-max">
                 <Link
-                  to="/admin/addCategory"
+                  to="/admin/statistical"
                   className="group flex items-center space-x-4  px-4 py-1 ml-1"
                 >
                   <TrendingUpIcon />

@@ -3,7 +3,7 @@ import Tables from "../../../component/Admin/Tables/Tables";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="bg-white">
       <section className="text-gray-600 body-font ">
         <div className="flex flex-wrap  text-center">
           <div className="p-2 sm:w-1/2 md:w-1/3 lg:w-1/4 w-full ">

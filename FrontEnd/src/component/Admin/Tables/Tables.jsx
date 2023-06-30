@@ -124,7 +124,8 @@ const Tables = () => {
             </div>
           </div>
         </main>
-      </div><div>
+      </div>
+      <div className="mt-[1rem]">
         <Chart />
       </div>
     </div>
