@@ -1,23 +1,16 @@
-import { Button, IconButton, Pagination } from "@mui/material";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { Button,  Pagination } from "@mui/material";
+import React, {  useState } from "react";
 import styles from "./ManageProduct.module.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import html2canvas from 'html2canvas'
-import jsPDF from 'jspdf'
 const ManageProduct = () => {
-  const [show, setShow] = useState(false);
   const product = useSelector((state) => state.product.data);
   const [resultSearch,setResultSearch] = useState(product)
-  const { id } = useParams();
-  const [loader,setLoader] = useState(false)
   const handleSearch = (e)=>{
     const a = e.target.value
     const result = product.filter((item)=>item.productName.toLowerCase().includes(a.toLowerCase()))
     setResultSearch(result)
   }
-
   return (
     <div className="">
       <div className={`${styles.container} overflow-x-auto pl-2 mb-10`}>
@@ -51,7 +44,7 @@ const ManageProduct = () => {
                       <div className="flex">
                         <div className={styles.imageProduct}>
                           <img
-                            src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/355664073_571313675192710_7659026406103693680_n.jpg?stp=dst-jpg_p843x403&_nc_cat=1&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=L5O5pJ-9Bq8AX8mghXv&_nc_ht=scontent.fhan2-5.fna&oh=00_AfDMYj_oPiyupP1jDTuqR83BRykmRd2i0KFUuoxkCYKkig&oe=649E8241"
+                            src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/356887807_301301542239503_5941088471849827208_n.jpg?stp=dst-jpg_p843x403&_nc_cat=1&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=T3I9fguYT4cAX-W-wKd&_nc_ht=scontent.fhan2-5.fna&oh=00_AfA7g16O4dtH1frGEKWocopMMv7HlD7vgPLobgmpzKfm0Q&oe=64A438A6"
                             alt=""
                           />
                         </div>
@@ -75,15 +68,15 @@ const ManageProduct = () => {
                               <span className=" py-1 rounded-full text-xs">
                                 Trạng thái :{" "}
                                 {item.quantity > 100 ? (
-                                  <span className="bg-green-500 px-1 py-1 text-xs rounded-full">
+                                  <span className="bg-green-500 px-1 py-1 text-xs rounded-full w-[64.55px]">
                                     Còn hàng
                                   </span>
                                 ) :(item.quantity < 100 && item.quantity > 0)?(
-                                  <span className="bg-[#f0e800] py-1 px-1 rounded-full">
+                                  <span className="bg-[#f0e800] py-1 px-1 rounded-full w-[64.55px]">
                                     Sắp hết
                                   </span>
                                 ): (
-                                  <span className="bg-red-500 py-1 px-1 rounded-full">
+                                  <span className="bg-red-500 py-1 px-1 rounded-full w-[64.55px]">
                                     Hết hàng
                                   </span>
                                 )}

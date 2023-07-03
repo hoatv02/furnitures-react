@@ -6,7 +6,6 @@ const Profile = () => {
   const [user,setUser] = useState()
   const getInfo= localStorage.getItem("AccessToken");
   const getInfoUser = JSON.parse(getInfo);
-  console.log(getInfoUser.data)
   return (
     <div>
       <div className={styles.profile_container}>

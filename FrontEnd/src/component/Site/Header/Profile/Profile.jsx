@@ -29,7 +29,9 @@ export default function Profile() {
     localStorage.removeItem("AccessToken");
     navigate("/signin");
   };
-
+  const getInfo= localStorage.getItem("AccessToken");
+  const getInfoUser = JSON.parse(getInfo);
+  console.log()
   return (
     <div>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -62,9 +64,11 @@ export default function Profile() {
         </Link>
         <Divider />
         <MenuItem>Add account</MenuItem>
-        <Link to="/admin/">
+        {
+          getInfoUser.data.admin === true ? <Link to="/admin">
           <MenuItem>Admin</MenuItem>
-        </Link>
+        </Link> : ''
+        }
         <MenuItem onClick={removeAccessToken}>Logout</MenuItem>
       </Menu>
     </div>

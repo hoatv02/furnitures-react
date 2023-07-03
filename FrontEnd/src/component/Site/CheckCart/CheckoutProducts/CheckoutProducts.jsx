@@ -46,7 +46,7 @@ function CheckOutProducts() {
         >
           <div className={`${styles.previous} `}>
             <h4>
-              <Link to="/menu">
+              <Link to="/">
                 <WestIcon /> Quay lại
               </Link>
             </h4>
@@ -61,7 +61,10 @@ function CheckOutProducts() {
         </div>
         {cart.map((item, index) => {
           return (
-            <div className="flex justify-between items-center mt-6 pt-6" key={index}>
+            <div
+              className="flex justify-between items-center mt-6 pt-6"
+              key={index}
+            >
               <div className="flex  items-center">
                 <img src={item.image} width="60" className="rounded-full " />
 

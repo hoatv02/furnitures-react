@@ -27,7 +27,7 @@ export const signin = async (req, res) => {
             return res.status(404).json({
                 message:"Mat khau khong dung"})
         }
-        const token = jwt.sign({_id:user._id},"123456")
+        const token = jwt.sign({_id:user._id,admin:user.admin},"123456")
         user.password = undefined;
         return res.status(200).json({
             data: user,

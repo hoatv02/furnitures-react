@@ -22,6 +22,10 @@ const AuthSchema  = mongoose.Schema({
             // required: true,
             type: String,
         },
+        admin:{
+            type:Boolean,
+            default:false,
+        }
 
 },{timetamps:true})
 

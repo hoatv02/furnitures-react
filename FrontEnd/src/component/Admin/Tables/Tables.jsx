@@ -7,7 +7,7 @@ import Chart from "../Chart/Chart";
 const Tables = () => {
   const product = useSelector((state) => state.product.data);
   const downLoadPDF = () => {
-    const capture = document.querySelector(".boxContainer");
+    const capture = document.querySelector(".tableAbc");
     html2canvas(capture).then((canvas) => {
       const imgData = canvas.toDataURL("img/png");
       const doc = new jsPDF("p", "mm", "a4");
@@ -34,7 +34,7 @@ const Tables = () => {
                     <option value="">50</option>
                     <option value="">100</option>
                   </select>
-                  <i className="text-[#037e01] fa-solid fa-download ml-10 text-3xl"></i>
+                 <button onclick={downLoadPDF} ><i className="text-[#037e01] fa-solid fa-download ml-10 text-3xl" ></i></button>
                 </div>
 
                 <div className={`${styles.search_table} border rounded-md`}>
@@ -57,7 +57,7 @@ const Tables = () => {
                 </div>
               </div>
               <table
-                className={styles.table}
+                className={`${styles.table} tableAbc`}
                 id={styles.myTable}
                 data-filter-control="true"
                 data-show-search-clear-button="true"
@@ -78,24 +78,28 @@ const Tables = () => {
                     return (
                       <tr key={index} className="mb-5">
                         <td>{index + 1}</td>
-                        <td>{item.productName}</td>
+                        <td className="font-bold text-gray-700">{item.productName}</td>
                         <td className="flex justify-center text-center items-center">
                           <img
                             src={`http://localhost:8000/image/${item.image}`}
                             className="w-10 h-10 border rounded-full"
                           />
                         </td>
-                        <td>{item.price}</td>
+                        <td className="text-red-400 font-semibold">{item.price} VND</td>
                         <td className="text-white">
-                          {item.quantity > 0 ? (
-                            <span className="bg-green-500 px-2 py-1 text-xs rounded-full">
-                              Còn hàng
-                            </span>
-                          ) : (
-                            <span className="bg-red-500 py-1 px-2 rounded-full">
-                              Hết hàng
-                            </span>
-                          )}
+                        {item.quantity > 100 ? (
+                                  <span className="bg-green-500 px-1 py-1 text-xs rounded-sm shadow-md">
+                                    Còn hàng
+                                  </span>
+                                ) :(item.quantity < 100 && item.quantity > 0)?(
+                                  <span className="bg-[#f0e800] py-1 px-1 rounded-sm shadow-md">
+                                    Sắp hết
+                                  </span>
+                                ): (
+                                  <span className="bg-red-500 py-1 px-1 rounded-sm shadow-md">
+                                    Hết hàng
+                                  </span>
+                                )}
                         </td>
                         <td>{item.categoryName}</td>
                         <td>

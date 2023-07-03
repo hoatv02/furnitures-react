@@ -44,6 +44,7 @@ export default function Product() {
                       image: `http://localhost:8000/image/${products.image}`,
                       productName: products.productName,
                       price: products.price,
+                      quantity:products.quantity
                     })
                   );
                 }}
