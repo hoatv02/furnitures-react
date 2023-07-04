@@ -49,53 +49,46 @@ const ManageCategory = () => {
             </Link>
           </div>
         </div>
-          <div class="min-w-screen   flex items-center justify-center  font-sans overflow-hidden">
-            <div class="w-full ">
-              <div class=" shadow-md rounded">
-                <table class="min-w-max w-full table-auto">
+          <div className="min-w-screen   flex items-center justify-center  font-sans overflow-hidden">
+            <div className="w-full ">
+              <div className=" shadow-md rounded">
+                <table className="min-w-max w-full table-auto">
                   <thead>
-                    <tr class="  opacity-100  uppercase text-sm leading-normal">
-                      <th class="py-3 px-3 text-left">STT</th>
-                      <th class="py-3 px-3 text-left">Category Name</th>
-                      <th class="py-3 px-3 text-center">Actions</th>
+                    <tr className="  opacity-100  uppercase text-sm leading-normal">
+                      <th className="py-3 px-3 text-left">STT</th>
+                      <th className="py-3 px-3 text-left">Category Name</th>
+                      <th className="py-3 px-3 text-center">Actions</th>
                     </tr>
                   </thead>
-                  <tbody class=" text-sm font-light">
+                  <tbody className=" text-sm font-light">
                     {category.map((item, index) => {
                     return (
-                      <tr class="border-b  " key={index}>
-                        <td class=" px-3 text-left whitespace-nowrap">
-                          <div class="flex items-center">
-                            <span class="font-medium">{index + 1}</span>
+                      <tr className="border-b  " key={index}>
+                        <td className=" px-3 text-left whitespace-nowrap">
+                          <div className="flex items-center">
+                            <span className="font-medium">{index + 1}</span>
                           </div>
                         </td>
-                        <td class=" px-3 text-left whitespace-nowrap">
-                          <div class="flex items-center">
-                            <span class="font-medium">{item.categoryName}</span>
+                        <td className=" px-3 text-left whitespace-nowrap">
+                          <div className="flex items-center">
+                            <span className="font-medium">{item.categoryName}</span>
                           </div>
                         </td>
 
-                        <td class=" px-3 text-left">
-                          <div class="flex item-center justify-center">
-                            <IconButton
-                              aria-label="Example"
-                              onClick={() => setShow(!show)}
-                            >
-                              <MoreVertIcon />
-                            </IconButton>{" "}
-                            {show ? (
+                        <td className=" px-3 text-left">
+                          <div className="flex item-center justify-center">
                               <div>
-                                <ul class="inline-flex ">
+                                <ul className="inline-flex gap-2">
                                   <li
-                                    class="  rounded-full"
+                                    className="p-1 bg-gray-400 text-white hover:bg-gray-500 "
                                   >
-                                    <IconButton aria-label="Example">
+                                    <IconButton aria-label="Example" className="w-5 h-5 overflow-hidden">
                                       <DeleteIcon className={styles.Icon} />
                                     </IconButton>
                                   </li>
                                   <Link to={`/admin/editCategory/${item._id}`}>
-                                    <li>
-                                      <IconButton aria-label="Example">
+                                    <li className="p-1 bg-gray-400 text-white hover:bg-gray-500">
+                                      <IconButton aria-label="Example" className="w-5 h-5">
                                         <ModeEditOutlineIcon
                                           className={styles.Icon} />
                                       </IconButton>
@@ -103,7 +96,6 @@ const ManageCategory = () => {
                                   </Link>
                                 </ul>
                               </div>
-                            ) : null}
                           </div>
                         </td>
                       </tr>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { jsPDF } from "jspdf";
 import { html2canvas } from "html2canvas";
 import styles from "./table.module.css";
@@ -15,6 +15,14 @@ const Tables = () => {
       doc.save("receipt.pdf");
     });
   };
+  const [search,setSearch] = useState([])
+  useEffect(()=>{
+    setSearch(product)
+  },[search])
+  const handleSearch = (e)=>{
+    const res = product.filter((item)=>item.productName.toLowerCase().includes((e.target.value).toLowerCase()))
+    setSearch(res)
+  }
   return (
     <div className="grid grid-cols-[7fr,2fr]">
       <div>
@@ -48,6 +56,7 @@ const Tables = () => {
                       onkeyup="tableSearch()"
                       placeholder="Search"
                       className="pl-2 outline-none"
+                      onChange={(e)=>handleSearch(e)}
                     />
                     <span
                       className={styles.clear}
@@ -74,7 +83,7 @@ const Tables = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {product.map((item, index) => {
+                  {search.map((item, index) => {
                     return (
                       <tr key={index} className="mb-5">
                         <td>{index + 1}</td>

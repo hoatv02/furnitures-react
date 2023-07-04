@@ -34,3 +34,49 @@ button{
 .sidebar ul li a .title{
     margin-left: 30px !important;
 }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d2f999;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  #scrollnav::-webkit-scrollbar-thumb {
+    background-color: #d2f999;
+  
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  #scrollnav{
+    transition: linear 0.5s;
+    will-change: opacity;
+    -webkit-transition: linear 0.5s;
+    -moz-transition: linear 0.5s;
+    -ms-transition: linear 0.5s;
+    -o-transition: linear 0.5s;
+  }
+  #scrollnavs::-webkit-scrollbar-thumb {
+    background-color: #d2f999;
+  
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  #scrollnavs{
+    transition: linear 0.5s;
+    will-change: opacity;
+    -webkit-transition: linear 0.5s;
+    -moz-transition: linear 0.5s;
+    -ms-transition: linear 0.5s;
+    -o-transition: linear 0.5s;
+  }

@@ -3,6 +3,7 @@ import React, {  useState } from "react";
 import styles from "./ManageProduct.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import axios from "axios";
 const ManageProduct = () => {
   const product = useSelector((state) => state.product.data);
   const [resultSearch,setResultSearch] = useState(product)
@@ -11,6 +12,19 @@ const ManageProduct = () => {
     const result = product.filter((item)=>item.productName.toLowerCase().includes(a.toLowerCase()))
     setResultSearch(result)
   }
+
+  const handleDelete =async (id)=>{
+    try {
+      if (window.confirm('Bạn có chắc muốn xóa?')) {
+        const {data} = await axios.delete(`http://localhost:8000/product/${id}`)
+      }else{
+        return
+      }
+    } catch (error) {
+      return
+    }
+  }
+
   return (
     <div className="">
       <div className={`${styles.container} overflow-x-auto pl-2 mb-10`}>
@@ -102,8 +116,8 @@ const ManageProduct = () => {
                         <span>
                           <i className="fa-solid fa-eye"></i>
                         </span>
-                        <span>
-                          <i className="fa-solid fa-trash" ></i>
+                        <span onClick={()=>handleDelete(item._id)}>
+                          <i className="fa-solid fa-trash"></i>
                         </span>
                         <span>
                           <i className="fa-regular fa-pen-to-square"></i>
