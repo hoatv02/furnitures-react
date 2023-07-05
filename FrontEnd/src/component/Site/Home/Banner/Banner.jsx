@@ -1,13 +1,15 @@
 import axios from 'axios';
 import styles from './Banner.module.css'
+import {useTranslation} from 'react-i18next'
 export default function Banner() {
+  const {t} = useTranslation()
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 ">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h6 className="font text-1xl font-bold tracking-tight text-gray-900 sm:text-2xl">
-              BÀN GHẾ PHONG CÁCH HIỆN ĐẠI
+              {t('BÀN GHẾ PHONG CÁCH HIỆN ĐẠI')}
             </h6>
             <p className="mt-4 text-sm text-gray-500">
             Ghế cà phê ngoài trời được làm từ gỗ thịt 100% nên tránh xa hiện tượng co rút, cong vênh phù hợp với thời tiết, khí hậu Việt Nam. Đặc biệt, sản phẩm có thiết kế đẹp mắt, rất hợp dùng cho showroom, quán cà phê, nhà hàng,… trong nhà và ngoài trời.

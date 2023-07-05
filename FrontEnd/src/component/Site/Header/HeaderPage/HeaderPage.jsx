@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import styles from './HeaderPage.module.css'
+import styles from "./HeaderPage.module.css";
 import {
   Bars3Icon,
   ShoppingBagIcon,
@@ -9,6 +9,8 @@ import {
 import { Link } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../i18n/i18n";
 const navigation = {
   categories: [],
   pages: [
@@ -24,10 +26,15 @@ function classNames(...classes) {
 }
 
 export default function HeaderPage() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [isLogin] = useState(localStorage.getItem('AccessToken') != null)
-  const cart = useSelector((state)=>state.cart.cart)
-    return (
+  const [isLogin] = useState(localStorage.getItem("AccessToken") != null);
+  const cart = useSelector((state) => state.cart.cart);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng)
+  };
+  return (
     <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
@@ -72,7 +79,7 @@ export default function HeaderPage() {
                         to={page.to}
                         className="-m-2 block p-2 font-medium text-gray-900"
                       >
-                        {page.name}
+                       {page.name}
                       </Link>
                     </div>
                   ))}
@@ -99,6 +106,10 @@ export default function HeaderPage() {
       <header className="relative bg-white">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
+            <div>
+              <button className="btn" onClick={()=>changeLanguage('en')}>English</button>
+              <button  className="btn" onClick={()=>changeLanguage('vi')}>Tiếng Việt</button>
+            </div>
             <div className="flex h-16 items-center">
               <button
                 type="button"
@@ -136,48 +147,54 @@ export default function HeaderPage() {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-              <div className={`${styles.searchBox} flex lg:mr-6`}>
-                    {/* <span className="sr-only">Search</span> */}
-                    <input  className={styles.InputSearch} placeholder='Tìm kiếm...'/>
-                    <i className={`${styles.iconSearch} fa-solid fa-magnifying-glass`}></i>
+                <div className={`${styles.searchBox} flex lg:mr-6`}>
+                  {/* <span className="sr-only">Search</span> */}
+                  <input
+                    className={styles.InputSearch}
+                    placeholder="Tìm kiếm..."
+                  />
+                  <i
+                    className={`${styles.iconSearch} fa-solid fa-magnifying-glass`}
+                  ></i>
                 </div>
 
                 {/* Cart */}
-                {
-                  isLogin ? (
-                    <div className="ml-4 flow-root lg:mr-6">
-                  <Link to="/cart" className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      {cart.length}
-                    </span>
-                    <span className="sr-only">items in cart, view bag</span>
-                  </Link>
-                </div>
-                  ) : null
-                }
-                {
-                  isLogin ? <Profile /> :(
-                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 cursor-pointer">
-                  <Link
-                    to="/signin"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Đăng nhập
-                  </Link>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <Link
-                    to="/register"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Đăng kí
-                  </Link>
-                </div>
-                  )
-                }
+                {isLogin ? (
+                  <div className="ml-4 flow-root lg:mr-6">
+                    <Link
+                      to="/cart"
+                      className="group -m-2 flex items-center p-2"
+                    >
+                      <ShoppingBagIcon
+                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                        {cart.length}
+                      </span>
+                      <span className="sr-only">items in cart, view bag</span>
+                    </Link>
+                  </div>
+                ) : null}
+                {isLogin ? (
+                  <Profile />
+                ) : (
+                  <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 cursor-pointer">
+                    <Link
+                      to="/signin"
+                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      Đăng nhập
+                    </Link>
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                    <Link
+                      to="/register"
+                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      Đăng kí
+                    </Link>
+                  </div>
+                )}
 
                 {/* <div className="hidden lg:ml-8 lg:flex">
                   <Link
@@ -195,7 +212,6 @@ export default function HeaderPage() {
                 </div> */}
 
                 {/* Search */}
-                
               </div>
             </div>
           </div>
